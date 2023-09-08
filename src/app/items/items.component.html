@@ -1,0 +1,160 @@
+<div class="container-fluid accordion">
+  <nav class="navbar  navbar-fixed-bottom" style="background-color: whitesmoke;" *ngIf="cartselected==true">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button (click)="cartclicked()" class="btn btn-ligth btn-block" data-toggle="modal" data-target="#myModal"
+          style="font-size: 34px;font-weight: 600;">Cart <i class="fa fa-shopping-cart"
+            style="font-size: 34px;"></i></button>
+      </div>
+    </div>
+  </nav>
+  <div class="row">
+    <div class="col-lg-12 ">
+      <ul class="list-group">
+        <li class="list-group-item" data-bs-toggle="collapse" href="#collapseOne">
+          <h1 style="font-size: 20pt;
+          font-family: 'Lucida Sans',
+          'Lucida Sans Regular',
+          'Lucida Grande',
+          'Lucida Sans Unicode',
+          Geneva, Verdana,
+          sans-serif;"><strong>Pizza's for YOU :)</strong> <strong style="margin-left: 60%;"></strong>
+          </h1>
+        </li>
+        <div class="collapse" id="collapseOne" data-bs-parent="#accordion">
+          <div class="row " style="margin-left: 2%;padding-bottom: 2%;">
+            <div class="card " style="width: 300px; margin-left: 1%;margin-top: 2%;border-radius: 25px;"
+              *ngFor="let menu of menulist_pizzas; let idx=index">
+              <img class="card-img-top" src="assets/items/pizza.jpg" alt="Food image" style="border-radius: 18px;">
+              <div class="card-body">
+                <h4 class="card-title" style="text-align: center;font-weight: 800;">
+                  {{menu.name}}
+                </h4>
+                <p class="card-text" style="text-align: center;font-weight: bold;font-size: large;">{{menu.price}} Rs</p>
+                <button type="button" (click)="add_pizza_to_cart(idx)" class="btn btn-success" style="margin-left: 35%;">Add
+                  to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <li class="list-group-item" data-bs-toggle="collapse" href="#collapseTwo">
+          <h1 style="font-size: 20pt;
+          font-family: 'Lucida Sans',
+          'Lucida Sans Regular',
+          'Lucida Grande',
+          'Lucida Sans Unicode',
+          Geneva, Verdana,
+          sans-serif;"><strong>Sandwiches's for YOU :)</strong>
+          </h1>
+        </li>
+        <div class="collapse" id="collapseTwo" data-bs-parent="#accordion">
+
+          <div class="row" style="margin-left: 2%; padding-bottom: 2%;">
+            <div class="card" style="width: 300px; margin-left: 1%;margin-top: 2%;border-radius: 25px;"
+              *ngFor="let menu of menulist_sandwiches; let idx=index">
+              <img class="card-img-top" src="assets/items/sandwich.jpg" alt="Food image" style="border-radius: 18px;">
+              <div class="card-body">
+                <h4 class="card-title" style="text-align: center;font-weight: 800;">
+                  {{menu.name}}
+                </h4>
+                <p class="card-text" style="text-align: center;font-weight: bold;font-size: large;">{{menu.price}} Rs</p>
+                <button type="button" (click)="add_sanwich_to_cart(idx)" class="btn btn-success" style="margin-left: 35%;">Add
+                  to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <li class="list-group-item" data-bs-toggle="collapse" href="#collapseThree">
+          <h1 style="font-size: 20pt;
+          font-family: 'Lucida Sans',
+          'Lucida Sans Regular',
+          'Lucida Grande',
+          'Lucida Sans Unicode',
+          Geneva, Verdana,
+          sans-serif;"><strong>Burger's for YOU :)</strong>
+          </h1>
+        </li>
+        <div class="collapse" id="collapseThree" data-bs-parent="#accordion">
+          <div class="row" style="margin-left: 2%;">
+            <div class="card" style="width: 300px; margin-left: 1%;margin-top: 2%;border-radius: 25px;"
+              *ngFor="let menu of menulist_burger; let idx=index">
+              <img class="card-img-top" src="assets/items/burger.jpg" alt="Food image" style="border-radius: 18px;">
+              <div class="card-body">
+                <h4 class="card-title" style="text-align: center;font-weight: 800;">
+                  {{menu.name}}
+                </h4>
+                <p class="card-text" style="text-align: center;font-weight: bold;font-size: large;">{{menu.price}} Rs</p>
+                <button type="button" (click)="add_burger_to_cart(idx)" class="btn btn-success" style="margin-left: 35%;">Add to
+                  Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <li class="list-group-item" data-bs-toggle="collapse" href="#collapseFour">
+          <h1 style="font-size: 20pt;
+          font-family: 'Lucida Sans',
+          'Lucida Sans Regular',
+          'Lucida Grande',
+          'Lucida Sans Unicode',
+          Geneva, Verdana,
+          sans-serif;"><strong>Tornado's for YOU :)</strong>
+          </h1>
+        </li>
+        <div class="collapse" id="collapseFour" data-bs-parent="#accordion">
+          <div class="row" style="margin-left: 2%;">
+            <div class="card" style="width: 300px; margin-left: 1%;margin-top: 2%;border-radius: 25px;"
+              *ngFor="let menu of menulist_tornado; let idx=index">
+              <img class="card-img-top" src="assets/items/tornado.webp" alt="Food image" style="border-radius: 18px;">
+              <div class="card-body">
+                <h4 class="card-title" style="text-align: center;font-weight: 800;">
+                  {{menu.name}}
+                </h4>
+                <p class="card-text" style="text-align: center;font-weight: bold;font-size: large;">{{menu.price}} Rs</p>
+                <button type="button" (click)="add_tornado_to_cart(idx)" class="btn btn-success" style="margin-left: 35%;">Add
+                  to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" style="font-size: 34px;font-weight: 600;">Cart <i class="fa fa-shopping-cart"
+            style="font-size: 34px;"></i></h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+      </div>
+      <div class="modal-body">
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-success" *ngFor="let cartitem of cart;let idx=index;">
+            {{cartitem.name}} - {{cartitem.price}}
+            <button type="button" class="btn btn-danger" style="float: right;"
+              (click)="delete_from_cart(idx)">Delete</button>
+          </li>
+          <div class="row pd1">
+            <div class="col">
+              <!-- <button type="button" data-toggle="collapse" data-target="#demo1" class="btn btn-success"
+                style="width: 20%;float: center;" (click)="placeorder1()">Place Order</button> -->
+              <!-- Button to Open the Modal -->
+              <button type="button" data-toggle="collapse" data-target="#demo1" class="btn btn-light"
+                style="width: 30%;margin-left: 0%;text-align: left;">
+                Total:{{total}}
+                Rs</button>
+              <button type="button"  class="btn btn-success" (click)="confirmtoPayment()" style="margin-left: 20%;" data-dismiss="modal" >Order Place</button>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
