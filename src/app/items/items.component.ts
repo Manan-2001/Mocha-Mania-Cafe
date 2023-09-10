@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-items',
@@ -6,6 +7,79 @@ import Swal from 'sweetalert2';
   styleUrls: ['./items.component.scss'],
 })
 export class ItemsComponent {
+  constructor(private router:Router){
+    window.addEventListener('scroll', function () {
+      var elements = document.querySelectorAll('.fade-in');
+      var threshold = window.innerHeight / 1; // Adjust this threshold as needed
+
+      elements.forEach(function (element) {
+        var bounding = element.getBoundingClientRect();
+        if (bounding.top < threshold && bounding.bottom > 0) {
+          element.classList.add('in-viewport');
+        } else {
+          element.classList.remove('in-viewport');
+        }
+      });
+    });
+  }
+  menulist_coffees:any=[
+    {
+      name: 'Classic Hot Coffee',
+      price:25
+    },
+    {
+      name: 'Bootcamp Special Coffee',
+      price:25
+    },
+    {
+      name: 'Cappuccino',
+      price:120
+    },
+    {
+      name: 'Americano',
+      price:140
+    },
+    {
+      name: 'Espresso',
+      price:180
+    },
+    {
+      name: 'Mocha',
+      price:180
+    }
+  ]
+
+  menulist_Tea:any=[
+    {
+      name: 'Masala Tea',
+      price:20
+    },
+    {
+      name: 'Olong Tea',
+      price:50
+    },
+    {
+      name: 'White Tea',
+      price:30
+    },
+    {
+      name: 'Green Tea',
+      price:30
+    },
+    {
+      name: 'Lemon Tea',
+      price:30
+    },
+    {
+      name: 'Blac Tea',
+      price:30
+    },
+    {
+      name: 'Darjeeling Tea',
+      price:180
+    }
+  ]
+
   menulist_pizzas: any = [
     {
       name: 'VEG PIZZA',
@@ -87,13 +161,156 @@ export class ItemsComponent {
       price: 110,
     },
   ];
+  menulist_chinees: any = [
+    {
+      name: 'Veg Hakka Noodles',
+      price: 120,
+    },
+    {
+      name: 'Veg Noodles',
+      price: 80
+    },
+    {
+      name: 'Manchuriyan Noodles',
+      price: 100
+    },
+    {
+      name: 'Veg Fried Rice',
+      price: 90
+    },
+    {
+      name: 'Manchuriyan Fried Rice',
+      price: 80
+    },
+    {
+      name: 'Manchuriyan',
+      price: 80
+    },
+    {
+      name: 'Dry Manchuriyan',
+      price: 90
+    },
+    {
+      name: 'White Sauce Pasta',
+      price: 90
+    },
+    {
+      name: 'Pink Sauce Pasta',
+      price: 90
+    },
+    {
+      name: 'Crispy Veg',
+      price: 120
+    }
+  ];
+  menulist_momos: any = [
+    {
+      name: 'Veg Steam Momos',
+      price: 100,
+    },
+    {
+      name: 'Veg Fried Momos',
+      price: 120
+    },
+    {
+      name: 'Paneer Steam Momos',
+      price: 110
+    },
+    {
+      name: 'Paneer Fried Momos',
+      price: 130
+    },
+    {
+      name: 'Tandoori Momos',
+      price: 130
+    },
+    {
+      name: 'Cheese Momos',
+      price: 130
+    },
+    {
+      name: 'Sweet Corn Momos',
+      price: 120
+    },
+    {
+      name: 'Sweet Corn Cheese Momos',
+      price: 140
+    },
+    {
+      name: 'Mix Veg Momos',
+      price: 100
+    },
+    {
+      name: 'Cheese Mix Veg Momos',
+      price: 120
+    }
+  ];
+  menulist_moctails: any = [
+    {
+      name: 'Lemonade',
+      price: 80,
+    },
+    {
+      name: 'Mojito',
+      price: 120
+    },
+    {
+      name: 'Virgin Pina Colada',
+      price: 110
+    },
+    {
+      name: 'Shirley Temple',
+      price: 140
+    },
+    {
+      name: 'Fruity Mocktail',
+      price: 130
+    },
+    {
+      name: 'Margarita Mocktail',
+      price: 160
+    },
+    {
+      name: 'Virgin Sangaria',
+      price: 160
+    },
+    {
+      name: 'Apple cider Mocktail',
+      price: 140
+    },
+    {
+      name: 'Quick Fruit Punch',
+      price: 170
+    },
+    {
+      name: 'Watermelon Mocktail',
+      price: 140
+    }
+  ];
   cartselected = false;
   total = 0;
   cart: any = [];
   pizza_Quantity=0;
+  opencart(){
+    this.router.navigate(['/Cart',{data:JSON.stringify(this.cart),
+     }]);
+  }
   add_pizza_to_cart(idx: any) {
     this.cart.push(this.menulist_pizzas[idx]);
-    // this.total_Piza=this.total_Piza+this.menulist_pizzas.price;
+
+    this.cartselected = true;
+  }
+  add_momos_to_cart(idx: any) {
+    this.cart.push(this.menulist_momos[idx]);
+
+    this.cartselected = true;
+  }
+  add_cofeee_to_cart(idx: any) {
+    this.cart.push(this.menulist_coffees[idx]);
+    this.cartselected = true;
+  }
+  add_Tea_to_cart(idx: any) {
+    this.cart.push(this.menulist_Tea[idx]);
     this.cartselected = true;
   }
   add_tornado_to_cart(idx: any) {
@@ -107,6 +324,10 @@ export class ItemsComponent {
   }
   add_burger_to_cart(idx: any) {
     this.cart.push(this.menulist_burger[idx]);
+    this.cartselected = true;
+  }
+  add_chinees_to_cart(idx: any) {
+    this.cart.push(this.menulist_chinees[idx]);
     this.cartselected = true;
   }
   open_cart = false;

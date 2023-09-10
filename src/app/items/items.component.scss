@@ -5,7 +5,7 @@
 .card:hover{
   box-shadow: 1.5px 2.5px 1.5px 2.5px rgba(216, 215, 215, 0.856);
   transform: scale(1.1);
- 
+
 }
 .pd1{
   margin-top:8px;
@@ -13,4 +13,50 @@
 li{
 background-color: rgba(233, 230, 230, 0.658);
 border-color: rgba(161, 161, 161, 0.423);
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* CSS for fade-out effect */
+.fade-out {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Ensure that the active item is visible by default */
+.carousel-inner .active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* CSS for scroll-triggered fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation to the element */
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+  opacity: 0; /* Set initial opacity to 0 */
+  transform: translateY(20px); /* Set initial transform */
+}
+
+/* Use scroll events to trigger the animation */
+@media screen and (min-width: 768px) {
+  .fade-in {
+    animation-play-state: paused; /* Pause the animation by default */
+  }
+  .fade-in.in-viewport {
+    animation-play-state: running; /* Play the animation when in the viewport */
+  }
 }

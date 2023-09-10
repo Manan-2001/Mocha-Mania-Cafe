@@ -1,0 +1,17 @@
+<body>
+  <!-- <h1>
+    Cart
+  </h1> -->
+  <div class="row cart-container">
+    <div class="col-lg-12">
+      <h1>CART</h1>
+      <ul class="list-group" >
+        <li class="list-group-item product-list" style=" padding-left: 5px;font-size: larger;max-width: 1000px;" *ngFor="let cartitem of cart;let idx=index;">
+          {{cartitem.name}} - {{cartitem.price}}
+          <button type="button" class="btn btn-danger" style="float: right;"
+            (click)="delete_from_cart(idx)">Delete</button>
+        </li>
+        </ul>
+    </div>
+  </div>
+</body>
