@@ -1,1 +1,91 @@
-<p>loation works!</p>
+<body>
+  <h1>Delivery Location</h1>
+
+  <div class="mapouter">
+    <div class="gmap_canvas"><iframe class="gmap_iframe" width="100%"  scrolling="no" marginheight="0"
+        marginwidth="0"
+        src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Ramna Maruti Nagar&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
+
+  </div>
+
+  <form id="address-form">
+    <h3>Your Saved Delivery Address</h3>
+    <div class="row">
+      <div class="col-lg-6">
+
+      </div>
+    </div>
+
+<ul class="list-group">
+  <li class="list-group-item" data-bs-toggle="modal" data-bs-target="#myModal" style="margin-left: 2px;color: blue; border-style: dashed;border-color: blue;border-width: 1px;width: 99.5%;">+ Add anothor address</li>
+</ul>
+  </form>
+
+
+  <h4 class="fade-in">Saved Address</h4>
+
+<div class="row fade-in">
+  <div class="card fade-in" style="width:250px" *ngFor="let item of savedAddress">
+    <div class="card-body">
+      <h5 class="card-title">{{item.place}}</h5>
+      <p class="card-text">Plot No.:{{item.plotno}} <br>   Flore No.:{{item.floreno}}<br>
+        Address:{{item.address}}<br>
+
+      </p>
+      <button style="margin-left: 15%;" class="btn btn-outline-primary"> Select Address</button>
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+
+<!-- modal -->
+
+
+<div class="modal " id="myModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Delivery Address</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-4">
+            <label for="plotno">Plot No./Building No./House No.:</label>
+            <input id="plotno" name="plotno" type="plotnumber" [(ngModel)]="plotno" placeholder="Plot No./Building No./House No.">
+          </div>
+          <div class="col-lg-8">
+            <label for="Address">Address:</label>
+            <input id="address" name="address" required type="text" [(ngModel)]="address" placeholder="Address">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <label for="florno"> Flore No.:</label>
+            <input type="number" name="floreno" [(ngModel)]="floreno" placeholder="Flore No.">
+          </div>
+          <div class="col-lg-8" style="margin-top: 3%;">
+            <input type="radio" id="office" name="place" [(ngModel)]="place" value="Office">
+            <label for="office" style="margin-left: 2%;">Office</label>
+            <input type="radio" id="Home" name="place" style="margin-left: 5%;" [(ngModel)]="place" value="Home">
+            <label for="home" style="margin-left: 2%;">Home</label>
+            <input type="radio" id="work" name="place" style="margin-left: 5%;" [(ngModel)]="place" value="Work">
+            <label for="work" style="margin-left: 2%;">Work</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal" style="font-size: 18px;" (click)="addToSavedAddress()">Add+</button>
+        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" style="font-size: 18px;">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

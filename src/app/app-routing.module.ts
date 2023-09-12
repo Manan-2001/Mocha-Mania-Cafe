@@ -4,6 +4,7 @@ import { AdvertiseComponent } from './advertise/advertise.component';
 import { ItemsComponent } from './items/items.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CartComponent } from './cart/cart.component';
+import { LoationComponent } from './loation/loation.component';
 
 const routes: Routes = [
 
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path:"MochaMania",
     component:AdvertiseComponent
+  },
+  {
+    path:"MochaMania/location",
+    component:LoationComponent
   },
   {
     path:"Cart",

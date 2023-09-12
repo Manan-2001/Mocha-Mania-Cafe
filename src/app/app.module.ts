@@ -11,6 +11,8 @@ import { PaymentComponent } from './payment/payment.component';
 import { CartComponent } from './cart/cart.component';
 import { LoationComponent } from './loation/loation.component';
 import { Advertise2Component } from './advertise2/advertise2.component';
+import { Advertise3Component } from './advertise3/advertise3.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { Advertise2Component } from './advertise2/advertise2.component';
     PaymentComponent,
     CartComponent,
     LoationComponent,
-    Advertise2Component
+    Advertise2Component,
+    Advertise3Component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
