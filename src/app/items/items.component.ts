@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./items.component.scss'],
 })
 export class ItemsComponent {
-  constructor(private router:Router){
+  constructor(private router: Router) {
     window.addEventListener('scroll', function () {
       var elements = document.querySelectorAll('.fade-in');
       var threshold = window.innerHeight / 1; // Adjust this threshold as needed
@@ -22,63 +22,63 @@ export class ItemsComponent {
       });
     });
   }
-  menulist_coffees:any=[
+  menulist_coffees: any = [
     {
       name: 'Classic Hot Coffee',
-      price:25
+      price: 25,
     },
     {
       name: 'Bootcamp Special Coffee',
-      price:25
+      price: 25,
     },
     {
       name: 'Cappuccino',
-      price:120
+      price: 120,
     },
     {
       name: 'Americano',
-      price:140
+      price: 140,
     },
     {
       name: 'Espresso',
-      price:180
+      price: 180,
     },
     {
       name: 'Mocha',
-      price:180
-    }
-  ]
+      price: 180,
+    },
+  ];
 
-  menulist_Tea:any=[
+  menulist_Tea: any = [
     {
       name: 'Masala Tea',
-      price:20
+      price: 20,
     },
     {
       name: 'Olong Tea',
-      price:50
+      price: 50,
     },
     {
       name: 'White Tea',
-      price:30
+      price: 30,
     },
     {
       name: 'Green Tea',
-      price:30
+      price: 30,
     },
     {
       name: 'Lemon Tea',
-      price:30
+      price: 30,
     },
     {
       name: 'Blac Tea',
-      price:30
+      price: 30,
     },
     {
       name: 'Darjeeling Tea',
-      price:180
-    }
-  ]
+      price: 180,
+    },
+  ];
 
   menulist_pizzas: any = [
     {
@@ -88,7 +88,6 @@ export class ItemsComponent {
     {
       name: 'MARGHERITA',
       price: 100,
-
     },
     {
       name: 'SCHEZWAN VEG',
@@ -109,7 +108,7 @@ export class ItemsComponent {
       price: 130,
     },
     {
-      name: 'SCHEESE CORN SANDWICH',
+      name: 'CHEESE CORN SANDWICH',
       price: 100,
     },
     {
@@ -168,40 +167,40 @@ export class ItemsComponent {
     },
     {
       name: 'Veg Noodles',
-      price: 80
+      price: 80,
     },
     {
       name: 'Manchuriyan Noodles',
-      price: 100
+      price: 100,
     },
     {
       name: 'Veg Fried Rice',
-      price: 90
+      price: 90,
     },
     {
       name: 'Manchuriyan Fried Rice',
-      price: 80
+      price: 80,
     },
     {
       name: 'Manchuriyan',
-      price: 80
+      price: 80,
     },
     {
       name: 'Dry Manchuriyan',
-      price: 90
+      price: 90,
     },
     {
       name: 'White Sauce Pasta',
-      price: 90
+      price: 90,
     },
     {
       name: 'Pink Sauce Pasta',
-      price: 90
+      price: 90,
     },
     {
       name: 'Crispy Veg',
-      price: 120
-    }
+      price: 120,
+    },
   ];
   menulist_momos: any = [
     {
@@ -210,40 +209,40 @@ export class ItemsComponent {
     },
     {
       name: 'Veg Fried Momos',
-      price: 120
+      price: 120,
     },
     {
       name: 'Paneer Steam Momos',
-      price: 110
+      price: 110,
     },
     {
       name: 'Paneer Fried Momos',
-      price: 130
+      price: 130,
     },
     {
       name: 'Tandoori Momos',
-      price: 130
+      price: 130,
     },
     {
       name: 'Cheese Momos',
-      price: 130
+      price: 130,
     },
     {
       name: 'Sweet Corn Momos',
-      price: 120
+      price: 120,
     },
     {
       name: 'Sweet Corn Cheese Momos',
-      price: 140
+      price: 140,
     },
     {
       name: 'Mix Veg Momos',
-      price: 100
+      price: 100,
     },
     {
       name: 'Cheese Mix Veg Momos',
-      price: 120
-    }
+      price: 120,
+    },
   ];
   menulist_moctails: any = [
     {
@@ -252,48 +251,47 @@ export class ItemsComponent {
     },
     {
       name: 'Mojito',
-      price: 120
+      price: 120,
     },
     {
       name: 'Virgin Pina Colada',
-      price: 110
+      price: 110,
     },
     {
       name: 'Shirley Temple',
-      price: 140
+      price: 140,
     },
     {
       name: 'Fruity Mocktail',
-      price: 130
+      price: 130,
     },
     {
       name: 'Margarita Mocktail',
-      price: 160
+      price: 160,
     },
     {
       name: 'Virgin Sangaria',
-      price: 160
+      price: 160,
     },
     {
       name: 'Apple cider Mocktail',
-      price: 140
+      price: 140,
     },
     {
       name: 'Quick Fruit Punch',
-      price: 170
+      price: 170,
     },
     {
       name: 'Watermelon Mocktail',
-      price: 140
-    }
+      price: 140,
+    },
   ];
   cartselected = false;
   total = 0;
   cart: any = [];
-  pizza_Quantity=0;
-  opencart(){
-    this.router.navigate(['/Cart',{data:JSON.stringify(this.cart),
-     }]);
+  pizza_Quantity = 0;
+  opencart() {
+    this.router.navigate(['/Cart', { data: JSON.stringify(this.cart) }]);
   }
   add_pizza_to_cart(idx: any) {
     this.cart.push(this.menulist_pizzas[idx]);
@@ -350,7 +348,8 @@ export class ItemsComponent {
       title: 'Please Confirm',
       showDenyButton: true,
       showCancelButton: true,
-      confirmButtonText: '<a href="MochaMania/PaymentGateway" style="color: whitesmoke;">Proceed to Payment</a>',
+      confirmButtonText:
+        '<a href="MochaMania/PaymentGateway" style="color: whitesmoke;">Proceed to Payment</a>',
       denyButtonText: `Denied`,
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
@@ -358,5 +357,59 @@ export class ItemsComponent {
         Swal.fire('Payment Cancle', '', 'info');
       }
     });
+  }
+  scrollToCoffeeSection() {
+    const coffeeSection = document.getElementById('coffee');
+    if (coffeeSection) {
+      coffeeSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  scrollToTeaSection() {
+    const teaSection = document.getElementById('tea');
+    if (teaSection) {
+      teaSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  scrollToPizzaSection() {
+    const pizzaSection = document.getElementById('pizza');
+    if (pizzaSection) {
+      pizzaSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  scrollToSandwichSection() {
+    const sandwichSection = document.getElementById('sandwich');
+    if (sandwichSection) {
+      sandwichSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  scrollToBurgerSection() {
+    const BurgerSection = document.getElementById('burger');
+    if (BurgerSection) {
+      BurgerSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  scrollToTornadoSection() {
+    const TornadoSection = document.getElementById('tornado');
+    if (TornadoSection) {
+      TornadoSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  scrollToChineesSection() {
+    const ChineesSection = document.getElementById('chinees');
+    if (ChineesSection) {
+      ChineesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  scrollToMomosSection() {
+    const momosSection=document.getElementById("momos");
+    if(momosSection){
+      momosSection.scrollIntoView({behavior:"smooth"});
+    }
+  }
+  scrollToMocktailsSection() {
+    const mocktailsSection=document.getElementById("moctails");
+    if(mocktailsSection){
+      mocktailsSection.scrollIntoView({behavior:"smooth"});
+    }
   }
 }

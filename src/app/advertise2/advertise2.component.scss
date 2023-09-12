@@ -1,13 +1,40 @@
-h1 , p{
-  transition: transform .2s;
-
-
+.bgimg{
+  // position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 80%;
+    height: 80%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+    border-color: #fff;
+    border-width: 5px;
+    border-style: solid;
+    // background-position: center center;
 }
-h1:hover{
-  transform: scale(1.1);
+
+.menus{
+  color: #fff;
+  text-decoration: unset;
+  text-transform: capitalize;
+  font-family: "Bauer Bodoni Roman";
+  font-size: 8rem;
+  text-shadow: 0 0 50px rgba(0,0,0,0.7), 0 0 50px rgba(0,0,0,0.7);
+  margin-top: 30%;
+  margin-bottom: 30%;
+  margin-left: 30%;
 }
-p:hover{
-  transform: scale(1.1);
+.menus2{
+  color: #fff;
+  text-decoration: unset;
+  text-transform: capitalize;
+  font-family: "Bauer Bodoni Roman";
+  font-size: 5rem;
+  text-shadow: 0 0 50px rgba(0,0,0,0.7), 0 0 50px rgba(0,0,0,0.7);
+  margin-top: 26.6%;
+  margin-bottom: 30%;
+  margin-left: 20%;
 }
 .fade-in {
   opacity: 0;

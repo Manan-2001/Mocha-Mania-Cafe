@@ -1,15 +1,15 @@
 <div class="container-fluid" data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
   <div class="row navbar" style="margin-top: -14px;margin-left: -38px;">
     <div class="col-lg-12 btn-group btn-group-lg">
-      <button type="button" class="btn btn-light" style="font-size:x-large;width: 150px;">Coffee's</button>
-      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;">Tea's</button>
-      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;">Pizza's</button>
-      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;">Sandwich's</button>
-      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;">Burger's</button>
-      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;">Tornado's</button>
-      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;">Chinees</button>
-      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;">Momo's</button>
-      <button type="button" class="btn btn-light" style="font-size: x-large;width: 128px;">Moctail's</button>
+      <button type="button" class="btn btn-light" style="font-size:x-large;width: 150px;" (click)="scrollToCoffeeSection()">Coffee's</button>
+      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;"(click)="scrollToTeaSection()">Tea's</button>
+      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;" (click)="scrollToPizzaSection()">Pizza's</button>
+      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;" (click)="scrollToSandwichSection()">Sandwich's</button>
+      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;" (click)="scrollToBurgerSection()">Burger's</button>
+      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;" (click)="scrollToTornadoSection()">Tornado's</button>
+      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;"(click)="scrollToChineesSection()">Chinees</button>
+      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;"(click)="scrollToMomosSection()">Momo's</button>
+      <button type="button" class="btn btn-light" style="font-size: x-large;width: 128px;" (click)="scrollToMocktailsSection()">Moctail's</button>
 
     </div>
   </div>
@@ -268,7 +268,7 @@
   </div>
 
   <!-- Chinees section -->
-  <div class="row fade-in" id="Chinees" style="margin-top: 20px;">
+  <div class="row fade-in" id="chinees" style="margin-top: 20px;">
     <div class="col-lg-12 ">
       <div class="row">
         <div class="col-lg-11">
