@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,  Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CartComponent {
 cart:any=[];
 total=0;
-constructor(private router:ActivatedRoute){
+constructor(private router:ActivatedRoute,private route:Router){
   window.addEventListener('scroll', function () {
     var elements = document.querySelectorAll('.fade-in');
     var threshold = window.innerHeight / 1; // Adjust this threshold as needed
@@ -42,5 +42,12 @@ delete_from_cart(idx: any) {
   this.cart.forEach((Element: any) => {
     this.total = this.total + Element.price;
   });
+}
+sendToLocation(){
+  const dataToSend = {
+    cart: this.cart,
+    total: this.total,
+  };
+  this.route.navigate(['/MochaMania/location', { data: JSON.stringify(dataToSend) }]);
 }
 }

@@ -17,9 +17,61 @@
           <h4 style="text-align: end;">Date: <strong >{{date}} , {{time}}</strong> </h4>
         </div>
       </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <h4 >Name: <strong >{{Name}}</strong> </h4>
+        </div>
+        <div class="col-lg-6">
+          <h4 style="text-align: end;">Contact: <strong >{{ContactNo}}</strong> </h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <h4 *ngFor="let item of location">Address: <strong >Plot No. {{item.plotno}},Flore No.{{item.floreno}}, {{item.address}},{{item.city}}</strong> </h4>
+
+        </div>
+      </div>
+      <hr style="border-color: rgb(200, 200, 200);border-style:ridge;border-width: 1px;">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6">
+              <h4 >Sr.  Items</h4>
+            </div>
+            <div class="col-lg-6">
+              <h4 style="text-align: end;">Price</h4>
+            </div>
+          </div>
+          <div class="row" *ngFor="let item of cart,let idx=index">
+            <div class="col-lg-6">
+              <h4>{{idx+1}}.     {{item.name}}</h4>
+            </div>
+            <div class="col-lg-6">
+              <h4 style="text-align: end;">${{item.price}}</h4>
+            </div>
+          </div>
+      <hr style="border-color: rgb(200, 200, 200);border-style:ridge;border-width: 1px;">
+      <div class="row">
+        <div class="col-lg-6">
+          <h4><strong>Total</strong></h4>
+          <h4><strong>Tax & Charges</strong></h4>
+          <h4><strong>Amount</strong></h4>
+
+        </div>
+        <div class="col-lg-6">
+          <h4 style="text-align: end;">${{total}}</h4>
+          <h4 style="text-align: end;">${{tax}}</h4>
+          <h4 style="text-align: end;"><strong>${{amount}}</strong></h4>
+
+        </div>
+      </div>
+        </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="col-lg-3">
 
   </div>
-</div>
+
+

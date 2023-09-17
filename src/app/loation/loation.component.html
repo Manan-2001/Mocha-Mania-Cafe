@@ -25,14 +25,14 @@
   <h4 class="fade-in">Saved Address</h4>
 
 <div class="row fade-in">
-  <div class="card fade-in" style="width:250px" *ngFor="let item of savedAddress">
+  <div class="card fade-in" style="width:250px" *ngFor="let item of savedAddress, let idx=index">
     <div class="card-body">
       <h5 class="card-title">{{item.place}}</h5>
       <p class="card-text">Plot No.:{{item.plotno}} <br>   Flore No.:{{item.floreno}}<br>
-        Address:{{item.address}}<br>
+        Address:{{item.address}},{{item.city}}<br>
 
       </p>
-      <button style="margin-left: 15%;" class="btn btn-outline-primary"> Select Address</button>
+      <button style="margin-left: 15%;" class="btn btn-outline-primary" (click)="sendToPaymentGateway(idx)"> Select Address</button>
     </div>
   </div>
 </div>
@@ -70,7 +70,7 @@
             <label for="florno"> Flore No.:</label>
             <input type="number" name="floreno" [(ngModel)]="floreno" placeholder="Flore No.">
           </div>
-          <div class="col-lg-8" style="margin-top: 3%;">
+          <div class="col-lg-4" style="margin-top: 3%;">
             <input type="radio" id="office" name="place" [(ngModel)]="place" value="Office">
             <label for="office" style="margin-left: 2%;">Office</label>
             <input type="radio" id="Home" name="place" style="margin-left: 5%;" [(ngModel)]="place" value="Home">
@@ -78,12 +78,16 @@
             <input type="radio" id="work" name="place" style="margin-left: 5%;" [(ngModel)]="place" value="Work">
             <label for="work" style="margin-left: 2%;">Work</label>
           </div>
+          <div class="col-lg-4">
+            <label for="city"> City:</label>
+            <input type="text" name="city" [(ngModel)]="city" placeholder="City">
+          </div>
         </div>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal" style="font-size: 18px;" (click)="addToSavedAddress()">Add+</button>
+        <button type="submit" class="btn btn-outline-success" [disabled]="plotno==''||address==''||floreno==''||place==''" data-bs-dismiss="modal" style="font-size: 18px;" (click)="addToSavedAddress()">Add+</button>
         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" style="font-size: 18px;">Close</button>
       </div>
     </div>
