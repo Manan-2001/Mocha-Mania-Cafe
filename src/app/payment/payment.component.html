@@ -1,9 +1,9 @@
-<div class="row">
+<div class="row" style="padding-bottom: 2%;">
   <div class="col-lg-3">
 
   </div>
   <div class="col-lg-6">
-    <div class="bill_section">
+    <div class="bill_section" style="margin-bottom: 0px;height: 500px;overflow-y: scroll;">
       <div class="row">
         <div class="col-lg-12">
           <img src="assets/images/mocha mania.png" id="bill_logo">
@@ -11,23 +11,24 @@
       </div>
       <div class="row" style="margin-top: 5%;">
         <div class="col-lg-6">
-          <h4 >Order ID: <strong >#{{order_no}}</strong> </h4>
+          <h4>Order ID: <strong>#{{order_no}}</strong> </h4>
         </div>
         <div class="col-lg-6">
-          <h4 style="text-align: end;">Date: <strong >{{date}} , {{time}}</strong> </h4>
+          <h4 style="text-align: end;">Date: <strong>{{date}} , {{time}}</strong> </h4>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-6">
-          <h4 >Name: <strong >{{Name}}</strong> </h4>
+          <h4>Name: <strong>{{Name}}</strong> </h4>
         </div>
         <div class="col-lg-6">
-          <h4 style="text-align: end;">Contact: <strong >{{ContactNo}}</strong> </h4>
+          <h4 style="text-align: end;">Contact: <strong>{{ContactNo}}</strong> </h4>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <h4 *ngFor="let item of location">Address: <strong >Plot No. {{item.plotno}},Flore No.{{item.floreno}}, {{item.address}},{{item.city}}</strong> </h4>
+          <h4 *ngFor="let item of location">Address: <strong>Plot No. {{item.plotno}},Flore No.{{item.floreno}},
+              {{item.address}},{{item.city}}</strong> </h4>
 
         </div>
       </div>
@@ -36,7 +37,7 @@
         <div class="col-lg-12">
           <div class="row">
             <div class="col-lg-6">
-              <h4 >Sr.  Items</h4>
+              <h4>Sr. Items</h4>
             </div>
             <div class="col-lg-6">
               <h4 style="text-align: end;">Price</h4>
@@ -44,28 +45,256 @@
           </div>
           <div class="row" *ngFor="let item of cart,let idx=index">
             <div class="col-lg-6">
-              <h4>{{idx+1}}.     {{item.name}}</h4>
+              <h4>{{idx+1}}. {{item.name}}</h4>
             </div>
             <div class="col-lg-6">
               <h4 style="text-align: end;">${{item.price}}</h4>
             </div>
           </div>
-      <hr style="border-color: rgb(200, 200, 200);border-style:ridge;border-width: 1px;">
-      <div class="row">
-        <div class="col-lg-6">
-          <h4><strong>Total</strong></h4>
-          <h4><strong>Tax & Charges</strong></h4>
-          <h4><strong>Amount</strong></h4>
+          <hr style="border-color: rgb(200, 200, 200);border-style:ridge;border-width: 1px;">
 
-        </div>
-        <div class="col-lg-6">
-          <h4 style="text-align: end;">${{total}}</h4>
-          <h4 style="text-align: end;">${{tax}}</h4>
-          <h4 style="text-align: end;"><strong>${{amount}}</strong></h4>
+          <div class="row">
+            <div class="col-lg-6">
+              <h4><strong>Total</strong></h4>
+              <h4><strong>Tax & Charges</strong></h4>
+              <h4><strong>Dilivery</strong></h4>
+              <hr style="border-color: rgb(200, 200, 200);border-style:ridge;border-width: 1px;">
+              <h4><strong>Amount</strong></h4>
 
+            </div>
+            <div class="col-lg-6">
+              <h4 style="text-align: end;">${{total}}</h4>
+              <h4 style="text-align: end;">${{tax}}</h4>
+              <h4 style="text-align: end;">${{dilivery}}</h4>
+              <hr style="border-color: rgb(200, 200, 200);border-style:ridge;border-width: 1px;">
+              <h4 style="text-align: end;"><strong>${{amount}}</strong></h4>
+
+            </div>
+          </div>
+          <hr style="border-color: rgb(200, 200, 200);border-style:ridge;border-width: 1px;">
+
+          <div class="row">
+            <div class="col-lg-12">
+              <h3
+                style="font-size: 18px; text-align: center;font-style: italic;  font-family: 'Times New Roman', Times, serif;">
+                " <strong>Mocha Mania</strong>: Where Every Sip is a Hug for Your Taste Buds and Every Bite is a Love
+                Letter to Your
+                Palate. Thank you for being a part of our mocha magic!"</h3>
+            </div>
+          </div>
         </div>
       </div>
+
+    </div>
+
+  </div>
+
+  <div class="col-lg-3">
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-3">
+
+  </div>
+  <div class="col-lg-6 payment-Section" id="accordion">
+    <h1 style="font-size: 22px; text-align: center; ">Select Payment Mode </h1>
+    <div class="list-group" style="border-radius: 65px;">
+      <a class="list-group-item list-group-item-action" *ngIf="openCreditcard==false"
+        style="font-size: 20px;font-weight: 525;max-height: 80px;" (click)="creaditCardopen()">&#10050; Credit
+        Card/Debit Card
+        <i class="fa-solid fa-credit-card" style="color: #252627;font-size: 20px;"></i> <img
+          src="https://w7.pngwing.com/pngs/828/980/png-transparent-credit-card-payment-cheque-discover-card-major-credit-card-logo-file-text-service-display-advertising.png"
+          alt="Credit Card" style="height: 32px;width: auto; background: transparent;margin-left: 29%;"> </a>
+      <a class="list-group-item list-group-item-action" style="font-size: 20px;font-weight: 525;max-height: 80px;color: blue;"
+        (click)="creaditCardopen()" *ngIf="openCreditcard==true">&#10050; Credit Card/Debit Card
+        <i class="fa-solid fa-credit-card" style="color: #252627;font-size: 20px;"></i> <img
+          src="https://w7.pngwing.com/pngs/828/980/png-transparent-credit-card-payment-cheque-discover-card-major-credit-card-logo-file-text-service-display-advertising.png"
+          alt="Credit Card" style="height: 32px;width: auto; background: transparent;margin-left: 29%;"> </a>
+      <div class="row">
+        <div class="col-lg-12" *ngIf="openCreditcard==true">
+          <div class="card">
+            <form>
+              <div class="card-header" style="font-size: 18px;">Credit / Debit Card Details:</div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-lg-7">
+                    <label for="card_number" style="font-size: 16px;">Credit Card Number:</label>
+                    <input [(ngModel)]="cardNo" type="number" id="card_number" name="card_number" required
+                      style="margin-left: 2%; border-radius: 5px; border-color: #25262753; box-shadow: 0px  2px rgba(31, 31, 31, 0.067);"><br>
+                    <label for="expiration_date" style="font-size: 16px;">Expiration Date:</label>
+                    <input type="month" [(ngModel)]="expiryDate" id="expiration_date" name="expiration_date"
+                      placeholder="MM/YY" required
+                      style="margin-left: 12%; border-radius: 5px; border-color: #25262753; box-shadow: 0px  2px rgba(31, 31, 31, 0.067);"><br>
+                  </div>
+                  <div class="col-lg-5">
+                    <label for="cvv" style="font-size: 16px;">CVV:</label>
+                    <input type="text" id="cvv" [(ngModel)]="cvv" name="cvv" required
+                      style="margin-left: 2%; border-radius: 5px; border-color: #25262753; box-shadow: 0px  2px rgba(31, 31, 31, 0.067);"><br>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <button class="btn btn-success" style="font-size: 14px;border-radius: 8px;margin-left: 40%;"
+                      [disabled]="cardNo==0||expiryDate==''||cvv==0">$
+                      Pay</button>
+                    <button class="btn btn-danger" (click)="closeCard()"
+                      style="font-size: 14px;border-width: 1px;border-style: solid;border-color: red;border-radius: 8px;margin-left: 3%;"
+                      data-bs-dismiss="creditCard">Cancle</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
+      <a class="list-group-item list-group-item-action" *ngIf="openNetBanking==false"
+        style="font-size: 20px;font-weight: 525;max-height: 60px;" (click)="netBankingOpenCard()">&#10050; Net
+        Banking -> <img
+          src="data:image/png;base64,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"
+          alt="Net Banking" style="height: 28px;width: auto; background: transparent;"> <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV1xoWuB_9x62z_lgxHaQchwPS7bBYO0VXWA&usqp=CAU"
+          style="height: 28px; margin-left: 38%;"><img style="height: 40px;"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe7u6HvHALex-t-oJ1g4u3fJZ3UpGpwlqpww&usqp=CAU">
+        <img style="height: 25px;width: 60px;"
+          src="data:image/png;base64,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">
+      </a>
+      <a class="list-group-item list-group-item-action" *ngIf="openNetBanking==true"
+        style="font-size: 20px;font-weight: 525;max-height: 60px; color: blue;" (click)="netBankingOpenCard()">&#10050;
+        Net
+        Banking -> <img
+          src="data:image/png;base64,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"
+          alt="Net Banking" style="height: 28px;width: auto; background: transparent;"> <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV1xoWuB_9x62z_lgxHaQchwPS7bBYO0VXWA&usqp=CAU"
+          style="height: 28px; margin-left: 38%;"><img style="height: 40px;"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe7u6HvHALex-t-oJ1g4u3fJZ3UpGpwlqpww&usqp=CAU">
+        <img style="height: 25px;width: 60px;"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZsAAAB7CAMAAACVdd38AAABBVBMVEX///8AOHTtHCTsAADsAAntDBjsAAXtFiD4u7z3sbMANnP1Gh360NHydHgAKW0AMHAANHIALW/ydnkAGmcAH2kAG2f73N0AImoAF2b+8PAAMXAAJWvsABHvSk8AIWrtCRbGzdn6zM1lMWGkr8P09vnd4ul0hqXwWV35wcKNm7RTa5NpfZ/n6/D3s7XwUlawusvvQEX729z2o6XxZmrzgoX95+hFYIxzL1zT2eJeMmX3q6ztJCsYQ3v1mZv0i42LLVg2VYXuMzlgdZqps8WAkKyYpbvxYmYpTIDFIzt/LlqSLFMmNm/RITXYIDC8xdNUI12IZoVYC1F8C0iSTGyEL1rn19tRM2aRc7EGAAATIklEQVR4nO2de0PqTJLGCc1FUUMCRC6JgiuiXFSUy/oqOIiiO+/MsDu7Z/f7f5QlkEBS1d3pBpTxmOevcwQ6Sf/6UlVd3YlENlD1YXper40bo8FAUZTBx6gxrtVfpw/VTQoNtakeXmsj08ibqp7WtJRiK6WktFJaV828ofbfbi92fYs/UpV6/zSv6g4SqjRdzZn9ycOub/VHqfXaOM3rGpvKSqmSmjfHt+EA9yWqno+yaonTXbBKZqEf4vl0TRsFVajDIDzZZmXXN/87qzrR8uk1wCyUzg3Od/0Ev6taNUOVGsqQUqpZD4e27avVLOibkZlLN95COttVtVZYfzDzKaVn67t+mt9Kk1N9O2TmdFT9dtcP9NuoMjC3R2ZOJz8KAwZbUTO7hXkGSCu87fqxfgNV9C0OZx6pg7DrbKhaQb7T/O3PPwS+lSpMdv1w31qtD1UazF/+fnDw70JfzfdDc3ptVU4lwzN/+3MGJhkVZKOktXBcW1OTgiSYf9hgZhJlMzMJprt+yO+pWm4tMDJswklnPTXEnRofGCk2ipKr7fpBv5/6ElbAH14wkmwUs7nrR/1uGsl4NX8cRNdno5jjXT/s95IUmg3ZhHCk1JCLBWzIRjHDOUdYTUmPc1M2Si601gRVz0tW7cZslEK4aiCkqZzLuRU2qUIYIRBQS35JYHM2iqbt+rm/gwbMGJpmp9Lm86apl6TYpNK6agv+zKd0Y9cP/q+vGsMOKJnZ0dv5tPLwULmt93Nm2tO7OGw0PZ/9aNYn56/nk1pDN1Qmn3yYIBWgSpZWbym9MPZHJSvehCgmm3RuUPelQ7deGwWWEZhtfemTfj+laZNNmpq4dK65tcxgk842KXnq1bpKT3PTPiTuc++9s/Yzyqr4+PL4OcWeyXy/RnE6U7kGYw1sYqbZbFLZJqsj1A3qyGaKjmp7HUJiRzLPtYH2LkmMXG+71OL+zazYQ4lfPFDM55TB9j2qY4PFRh1w9na0RrQgdyonsg66904S8Wg0/iVszo7mF4ttmc3sGWKzYqXYjLCNpulcz2Oa06hsgvJo6jQnKh0Uki5eL8BEv4TNXdcii4ttlc3VrNcvipVhMz3FaLSAGbo10ClsjMD1zFtakgjXAy1eX85bW/RL2PSGT6TsXmx7bM4yLhhJNti1SanBxlNfRWz+KuDlVyhwSn329288YD6dzWObWJ41qS2x6XXLK95ybG7xJFAQ2RDY+E8/m3i0KHI5WmzIYF+P+Pl/LhsS911sS2z2iH8NUoLNADVkUyw+/F+W94pJMTR2ljXuOOzowJeyKfsvti02CX+x4mymKPzMG2K8OvbWW9ISRBOJjLHFzp5xfjSbPpptDEFP/c5bb6QnfrMKumSaucz2k9lcoGiNLppP7mVDZHxdHCFKGazv/mQ2b3CAEXMFbXnYkHupu22iHVfqK+OrP5kNGvuFu42HjSVZY1XUcbQR46s/mE0FWQIF4bjwkk3yRfZ2UW9lhqN/MBsU5eSYs1BLNjJ2wEK446iMiOcPZpOCzo2JQpzVyutbs9Ef9ce1ydTbul02ZF/+ftGMozEM983ZFO+u9u+HMz1e3QXY+XJsemePz0eX7ZenaPTppd3pPjLqfE02FygxHRhMD/UPI6/q6ZKmaem0ahrq+Nz1RRw21jpLKg8GvDDDBOGz6T3uAz2Cz4+ihJCYZSs2+1f8/f4YXmLP/e11Elyse80oN3I2vEnY5cbjSUfx8qz8kyFlCAlgc4UeYfH5OVyN9A9ptx8GOlsorRpKfY5nwSb5RK1TR9XpWz9tGLnBeOJ3Lz9gh81XqAXw2bRJzC9ytfqwOHwhsTisb4skn3uMQqJAcU/Bni53fUl8cbeVkhY5Qd4En80xegRr8cEYrnZ5h/3KwKTn3qR04+PWZcObbCrjgrmAq5VUw3d2ygS2Cp1+/gCXzRB8Gk08r565w6g/uwJvvNVzQv8aqNAlm44/+opKJ23QM/lsXuDVifNzNN3kV1FH7p5PzUy/ztkQ9rrtw8i/0Kl5Txi4gIMaY8LhsTmGaOIn7kfFI8KrwDi5XDUpOTZFeFGkJBmKs3mGndWt0BasoFR++aOg3R6p+RoBZ7KpFfDaQ241ZCqQvCrNBjW5hFuB1wRM60jxVQVK9ptANrMvX4qyOYSlLSu0ApcHVi5gPzhvfcaGPdlcKNQC9IE75degpUYP43HY4CbnDvUdgfqLEreTbZ9N1DpZ3SaXTRRce1WhyBRYxhzfBLavzdgwJ5spa0BMD5xv3MJrmxU5Nnewkog72bStqIjiyd5nsfGNJxw2GXinqwpF7rnqrNzQsjsobJiezYQ9V+njylzn6NpU75PN5glaYDfOBy+8mcarpNX7LDbeeZjN5gw1r5VHNYbjiuks+OOFAxobwnIE68h78ShtziUYyGOygU0uWXZqry2KZvabZPGz2Hh+wGZTBlf2xiVRgo1jpuGFAyqbKAPNhIeGzYyabsNig5uc88RHYgOaU1xbns1ylkuW5+6s7YJSSrC6gWw6wGDxxSWRrXS6cBDrQruk/ok87IVupXeLzEVfbmWxgU3ONbuuKc165tDMq5BSg7ZDJMlm3i3jMZK46Q6vr84OD6/2n28ohS9/wWKzh5qXd/ZGK/e5ha0kNKSdMqKTQnMVRfRlAgYb2OTirtUK6iFquxsvw7NesXd4f0IwhVl9tIkjFBewyEpLNrORMEE6+8AKekxCqz3mzjgMNkV4q2TPWyCqRWNh4Yp0G50RsG4xggnBbAa04uhsrsCfk3Hn6100opWfVkGUuzYOy9xEjl1dg0+t4fKj47tlIU+kTY2BdmKoZC6bSzAvxjK+4tC0smBTFZgvmLua2Bt5ApRShNkUkWfjVB122i2fGxjJoC94LFroCNLj0O+sMDKsbMJlsw+bl38RDDNYsEHhAopYmTGUJBpRlYTZoFpwl8SfYbeJn4DykKkQf5dkwxRsGMt5hcYGtSIC1i9Qv1nMNwJscozJ5lzmNBy/xPsNnO/Ly+pFQxZ8YuwWeb6yIZtIt0z9OZXNCWxeV6AwNN84dlpgBauM9PKLNe0AW8LzDWxyyaT7ZWRYx3COCf7O0kvclA0o2nJMRxqbe3ipLiwM2WnOIgpO9fQrPWLcXdAPuWyohVLYoCa3tOWfoa1EKCXCCOnSxNuYDWg0Zae+KWx68LHaqDDk3zgr0jjVwl+LKUaaVHOTQz5F/RvY5DzREVjt5QylxHsUw3I/kWVzt3ff7VyevLy8tG/eZ84O6DeuvU9h04beGV4sR3EBZ4GLPzQxdxncisUDSum54J/F4gIZOKKVO8wv40HcFmyzq34nw+aq+0JIwiq7i9JxO0gA7pXF5m4I/0LJvETxtJJz/k+Ds+88ZTJMtN5/C6FRx01btQH4u1g8LXPjb3LeVQq01kZpjhGUsRFNuD6fMJuzDiEwMIHFYmPBnu9ZrV0JJ3U683HLYE4cmsrKK3/6JYJmOXTBuUkoDh2F6//EEziCHmk0TisxcgMjjK7BIMjm6oW7phrIJgoGVWTnz4XWb9zAAPsElbTCyi3MkL+KsFnm00BjUGj9BsryLonvAxM6iWfY+Y2CmrXcZivEpnhJifzIsQGKUXs3WvdcLhJEzqlwUnnm/o9rcvA/ucA3S6QKLoELaCQKrXui5/e6/XCW97iVXkEHdWkxiLA5FOsz88sLskns4cvQnMzVoD/N4oouZZm7pmYzLDlrjSk/8spzwi3aLieULzBzZvz/9+aSDCEbejID+pob2xZgcybaaXhskKVP7Tgoz8bjnLf6ht+MK2Ub7FzpmbttW0UXY95bWfSSJ40HzHWCeTZdOFt4AuufzwZZG+uwsR7hQ93A69hC+WlKzjPTV/oF9yCaVFotjDm7QDuWa7HabzOikykVvFYyjIkK5qdlYPV4JpVHViTYLxBaWfqIAmxQwCeatBKEscbAtqHhHVC3yGBjwG/JtiYN08jlDENpvvK25cxbgutNVOt6Hh3CktILDS9bNJwK5nVmIh0w4K8s0GtQCYz9DbAAN7YSzGYI43Vx0n7eO+zNdHd4dgVsEY7vyV1Vc4TzofGwX21dBG37WLRlj6c3HZ/mdfeNkyltnqfrLwS1CsF86AzFd3TXVlCyFy1kg6MHy4BaIBu0NHHkr1PhuACETG1FaMKhbCQI1iLLyu+FV+oNJWfMupyhjWqvyCeCIQnWBmDMBtlZS/eT7fHzilx55UFs4CIyDDscC7OJQJMmRnE/ceRM6lymhZzgIyVCUm216N2hBZcnRPffZPDfopZrBMN2TQlD07JAXDMpiM2RfzBMwHRj8TGNkitwF4HC+9aU0wq9lpjKOLdEjV4xhNqE6L41G8M9Wml3Wv47mEmozmcGZrcsoz6IDah8fxJmEqUZgYmMxwZFO3FplP2e0h1nmcxP96HoOgVjqfB+z3kXgeZS0tkWAQ01WmtEC45LMw2xsYa8X5bhkgssmcsGJ0LjmDllOcBk7VmmahXEOvgl/COUZMW8JpUNCpw5K5+o3ilWNMr2WAWBYRYvWGIA0xkgh21zLhvUxynDDi1N0JR4sZPneQ5+ib7/oQrjNeLnCyyqC6WUOcmq0DHF+x1Re12tmiJbAlhPx/x+g3eccNkgw4VysgklF03i8NmeJ4Zx8ItzHp5PaAew+LkcCzYoT92Z0FGHghv4eigFM7Zq/ji/wmcig8qHeyiQX8pngztwGYX/KKenKXnRw+iL3kc9+CV4FvcD6qvi59k4wwz0H91AO9qS49+8dZbAn7MvBnbJwZbu3xaGM+QD2OAwLk79p63xL6PFfBV9C0wHv2bev8hwqMErSpwD5bDBiWiLuAfuOFHSdgfyw3f8acJrZuMcnCHnXrxwruI4PB3E5j44K4hyfpo/rMZUz7/2N2OjaINgOH0UDZU4P82dnlEmmjMAwdS1qJ10S04y3cxNjBLe908pqDdGycl1rxjpHe53j7HdO8N+bV+0t0/L5g1kgzZGUVbZaJmYzIVnj/4X3JDNRkl/BMGpobbAOxSMxQanoi2quUjLSI8m42W4YOrUky9ygNI8Zr90tgrYFYrbg/2pRc+CX4XBmWyQAwr6aYQ+4yipXCWgjl//Cc+E/Mu8ogN6Tg17u7xZiskGBtrduAcyxHgCIzxnCcC2tLEFAgR8z/cANrgj4igT5Zxbu8b4BkHT+DcqG0VTeSdKjvEIyj3nlsmGEq9fPDRtlwdDBEaxsCnhau5Y47r0yfKPicmbIDYYNgp6MlKe8n12/Lmi6AqDDe8Nka0P7OryDwVjs8HTvuOq4B7FEEKDEshXitk9jN8n422/heJGjDj7PfEEhxI8aeeq2w3aoK93RS4adh4Oi83MeR3RR6l6ltJD+eeqs9lEbtCDWe4OEJGF4yRtRQt3RrfO5jYZb1NckhQBm6dANsgBRQ4Z430EdpagWcd9p9JYZAWw2ShadozpnGu0NxIwI2mBbCizgxP36D0hSwGpbNH2ajCnFCdC02afW2BXqv/XJJANzbyAiVv093jY0rMfk4fVoNOa1vS8s07NYWO/MaL/6sFanTYN6rsiUgHv8eCwiRzhinLziZ4D0mHirH3ErNnKTZRi7o+fNwvAphjIhrLPrgyzHFjvv7EbtpovKP1mrVYbj1TDXDknXDb277KDZt1+A87beJA1GSkeQe+/4bGhHF+yzInqdThHc8TJDQ5QO7qiU11Gz46oA2Z8ETH1/9QxurhsHjEcAuP5/O1mKW2ewuz/TgAbZfnqqOXqNFZg6A7UhD80jNbvvb56r5ugJsbGE+SISWam4juN6ip8c/aE6CTJyaKL+O08Z4RFy6W+wZSSHgLDA2u8by2YTaCC37dGkj6Bk0GTWN745FUmThLW0utMxq0YiXUCl5mOu2USK3t+VrYSxLPasHfiPfsraZEXNyr0RHx6dtiAO/SxuSLoESy4siH/nsLN2XzBewp7e8POSXxeU+V25/mase8e6vixe/lCnJ9ddod7h762XNzPvLgAToarXlgE2tZTSL/fc3M2hcD3fvwrq3h8d3e8ternS/a9uBuzyTHcp1BYku+T3pRN+D5pGcm9h31DNqboCnaouaTgbMbGHO/6Yb+bgk6C3BqbsNfIqyFw4CCdTfLgT3E0uXCuWUM14ZM1vGySBwf/IbSlcC7OKkIoniaiTuiSzQKMeFxB+95+zS5VORU7ymnBRhaMoqS1T48G/L5qfQhZBDM28mDs5VSJtNFQSNwz1ZdsYjJzjKNwqtlYFT3Y0/k/+bizog7C8WxzNeUXDQKlBb1vOpSYKgNxV0dIqTwjxSOUvCanm5y5Bcl43+IRamNVa7yTHKTI6Kx8qlDryj7JYQvzjm68hYbz9tWq5ajJSxJ9RjXrIZnPUXWi5dcf2tK5QUCaU6iNVGkU1HXO5C6Z2WZl1zf/26t6Psqq7DwzOphC/zYczL5ErdfGaV5HGwJpSpXUvDkOwXypKvX+aV7lAtJ0NWf2J7xNOKE+Sw+vbyPTyJvz1+UuIKWUlFZK66qZN9T+223o/u9U1Yfpeb02bowG9lnCg49RY1yrv04fwmFsK/p/a/L4xpzsiocAAAAASUVORK5CYII=">
+      </a>
+      <div class="row" *ngIf="openNetBanking==true">
+        <div class="col-lg-12">
+          <div class="card">
+            <form>
+              <div class="card-header" style="font-size: 18px;">Net Banking Details:</div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <label for="account_number" style="font-size: 16px;">Account Number:</label>
+                    <input [(ngModel)]="actNo" type="number" id="account_number" name="account_number" required
+                      style="margin-left: 12%; border-radius: 5px; border-color: #25262753; box-shadow: 0px  2px rgba(31, 31, 31, 0.067);"><br>
+                    <label for="Acc_HolderName" style="font-size: 16px;">Account Holder Name:</label>
+                    <input type="text" [(ngModel)]="accHolderName" id="Acc_HolderName" name="Acc_HolderName"
+                      placeholder="@Jhon Deo" required
+                      style="margin-left: 5.9%; border-radius: 5px; border-color: #25262753; box-shadow: 0px  2px rgba(31, 31, 31, 0.067);"><br>
+                    <label for="ifsc" style="font-size: 16px;">IFSC Code:</label>
+                    <input type="ifsc" id="ifsc" [(ngModel)]="ifsc" name="ifsc" required
+                      style="margin-left: 19.5%; border-radius: 5px; border-color: #25262753; box-shadow: 0px  2px rgba(31, 31, 31, 0.067);"><br>
+                    <label for="bank" style="font-size: 16px;">Bank Name:</label>
+                    <input type="text" [(ngModel)]="bank" id="bank" name="bank" placeholder="@State Bank of India"
+                      required
+                      style="margin-left: 18.5%; border-radius: 5px; border-color: #25262753; box-shadow: 0px  2px rgba(31, 31, 31, 0.067);"><br>
+                    <label for="branch" style="font-size: 16px;">Branch:</label>
+                    <input type="text" [(ngModel)]="branch" id="branch" name="branch" placeholder="@London" required
+                      style="margin-left: 23.6%; border-radius: 5px; border-color: #25262753; box-shadow: 0px  2px rgba(31, 31, 31, 0.067);"><br>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <button class="btn btn-success" style="font-size: 14px;border-radius: 8px;margin-left: 40%;"
+                      [disabled]="actNo==0||accHolderName==''||ifsc==''||bank==''||branch==''">$
+                      Pay</button>
+                    <button class="btn btn-danger" (click)="closeNetbanking()"
+                      style="font-size: 14px;border-width: 1px;border-style: solid;border-color: red;border-radius: 8px;margin-left: 3%;"
+                      data-bs-dismiss="creditCard">Cancle</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <a class="list-group-item list-group-item-action" (click)="openupiFun()" *ngIf="upiopen==false" style="font-size: 20px;font-weight: 525;">&#10050; UPI -><img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdz37Cv1PNsKhssjzRsmg1CosLRL3tUtRvIg&usqp=CAU"
+          style="height: 25px;" >
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb8OYkqCPKg4SEhDgL0pcuzP4M-O-9yc-dbA&usqp=CAU"
+          alt="Credit Card" style="height: 35px;width: auto; background: transparent;margin-left: 55%;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5LhhJ1HNH9AC7xgnM2KE0xydKJC6JargO1g&usqp=CAU"
+          alt="Credit Card" style="height: 35px;width: auto; background: transparent;margin-left: 1%;">
+        <img
+          src="data:image/png;base64,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"
+          alt="Credit Card" style="height: 25px; background: transparent;margin-left: 1%;">
+      </a>
+      <a class="list-group-item list-group-item-action" (click)="openupiFun()" *ngIf="upiopen==true" style="font-size: 20px;font-weight: 525; color: blue;">&#10050; UPI -><img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdz37Cv1PNsKhssjzRsmg1CosLRL3tUtRvIg&usqp=CAU"
+        style="height: 25px;" >
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb8OYkqCPKg4SEhDgL0pcuzP4M-O-9yc-dbA&usqp=CAU"
+        alt="Credit Card" style="height: 35px;width: auto; background: transparent;margin-left: 55%;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5LhhJ1HNH9AC7xgnM2KE0xydKJC6JargO1g&usqp=CAU"
+        alt="Credit Card" style="height: 35px;width: auto; background: transparent;margin-left: 1%;">
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZcAAAB8CAMAAACSTA3KAAAAk1BMVEX///9fJZ9QAJhcHp3y7vdOAJdXEptUBJrw6/VYFZzQxOBdIZ5VC5qumsvs5/NVCZrHutt9V6+1o9Df1+qLa7d6Uq5aGZy6qNOmkMfCtNfb0ufl3u7Vy+ScgcH28/n7+v1vQaiRc7pmMaOqlMmGY7S/r9aiicSUd7xpNqRjK6G3pdGCXrJ9Vq9sO6aTdbydg8F1SquAIS+qAAAOGUlEQVR4nO1daXerKhRNMEgMJqYZzDw1Q5vb2+H//7qXQeGoHMDWvrS57LXeh9erJ8AGzgjWag4ODg4ODg4ODg4ODvePZaPZWN66EQ4CzfmfxcNjQCghp/+i+sem3Z3dulH/ODr7QUyYH3u8noJ7sR8RMmxPb924fxX98ZGGcV0NLyBk0F3duo3/HJa9RxJwhJQEMSNvbtX8n5htqG8gJaGGPE9u3dh/BrMXim1fRXAWjG7d4H8CzR31rFm5IPLcmvl2jEusFbFmyNpZzt+KeT0szcoZHn2/ddPvGQtqpe1V8I9uyXwTOs/+Z1k5gdPerTtwn+iSkvo+D7K7dRfuEVv6NVZOCJ5dYLNqvBFksHns+7Ymmhd0bt2PO8NObYfxgPhPvd4itjTTOHPav0o8KDV+QPghCYC1LXc5Thwx1eFFSYv/DsZ4b6t+HDGVYaPcpfhr5qExs1wxYeNG3bg3bBGVH2cHeGCpY7yjS8tUgS62Q/G4mXlwaGmWxX9v1JO7QgdXHDzMmL2rR0vHMzrcqjN3hEdNSCxn9i7tkmX1Op3fqjd3g4U2JsZJJlE8szXKfKdivoa5YaR5duq3LImJXajsa/CMOxNtwedHlsSQFvaLDhY4WET2aSZLfLB0Y4JbdekeoLHFIDF7+M7ALknjj2/VqTvAzs4jyWa8Pixfcm7/Z9G3Na/oFry1Olq5MfHTzfr12/FgnaAk0FNsRFZuDG2iP+ygg7U3ciYGzn67dRYsbtaz341NmUoxtgFv2rkx1GWVP4NluYR+CF3FHpZ1hvDbN+vbb0avZFWS/wBefrdwYzivopnz1gn9KiT9EmABSz9CQF9B1Gt3Pj92hoZdYg5frvr7w+41oCcEH0/7YtnGkLATSPwzI6HL+Wjx8Bydm8//HrpVbNx9LBs26mKYwMFZXtHpMdQ6M5nK/faQkDDw+EUC9+KQPv/JRjybyWbL6c9bMvPDK2Xn5l+b6AURHXa/LHUbKMcyKK0UZriuiTSvrd4D4hcMdR6SjBPbTIV767Lt+l40B4QVD255rP7VwCCyjYXlT7Mc1AzX9RvZMEJeYq/A8RG8/DDrbsWQTnOy+1KOAwuNfYKXOWoDBHjiUmMNeiDpI3khP6pksIVvEsHjV2bQHqmi+AQvU7SN/Bl9qaGztKUy+bG8aOxRr/6FFYM5leX1i4YXzeaj5YWz9L3fyEs9/vi8YCw0lqsaswFm2Z3AUC2Y5YV72QRd/JI89jt44bn0Ivu0R91At/ewdDFLFy8sC7bYS4AXj5Hnj48jDUHnUovhF/ASE/Y6/PAILEr5tJGC6+p6NOxOT5BG0WoKANyI1mF8Bm6OnYYczfNLXrzd9LIfLyeP0kf1kq3g5/MSJ9XCzV4k9yCNwaPHH03xpBedPGwq9X+HMgEKts4tCS7AJZ1ajTVA8hLKdOiTtJ1p0tsfz4usx16BjCH7pNx37WhmR6sDVIEHgmRtm+IAzDQBvAALcCB6lgQ9fwEvYAeRPqFFCEqJF1NKrCJe0Op+NS9Lubtdi2l/Fy9SO+CKVQ9dlWWVvDBs3qh5AQvmuhMAXq4Kr9FsGL2DRsPiprTV6SlTCcJq1prs991pMfOq5qUmWl9QrLioDEzbWFW8RFggD+Hlj5B5rdsAvMxa45f4cgsaH0wwbubb5Bl6HPSQtTrrjnfPl/vUCPVe0Au7Zts1JSwKw4gRNsj1A+FFTCt+tBYFsTLmtSriJdwrfv0MhJeu0PzXfUvyUmcsSDZfHkfkXcHMcuyT9JnzuVDyWAheNCYDn0SB9Dc8n8RthazpkMKwZMzCTDwV4UXapqH8Y18vKtMDY66yIl7QnCXCywqsj/P/N7EJFESFHbJN8nXtPIozjm3/g4ZxcQf3WeGCm6fiJTnsGexBCC9SwUQaUTx6RpSlNgpyHa1qeEH1H8LL0paXfB3oyUpVuWScguqPJXYjESeDrKxXVdc8YMQYeUkN5dVa5ZF4RJ1O0nQ3wc/nJXuaY/WIBPyY1MCaoFb4AmTV1mpZnDWKogzrBRNFlAbAXfDCCdAL+GE2JnxvXbCRAQ/9CeuYTM7Z8mIhSj0qGG6kX8rwUg9knrqnGXKaWlzaILDMLUxx5UsmBVFaXjSVdkR1adv/Z4/9+UZeZElntj88jqEiEVMzwwv3ck8N0zYMwZ+DszUtnQr+WI6XvxpRGUs6hbHMqCpesKv8yvPihSefg1HQtbqf7pKwKQFZbzZDBtRtmv8EvJBovTs9RcBT6YIBmVzOtv3lst+WpSUpC3a8QFFkfBI1g6JUjpOxMrkqfx9LwJTmxXvZ95dnv3lMRNfE9AXhC7K4+PorUHoYL/KDGaQKfC+FpTFgWVfHebIel8f0qTRtaMcLEOUVRalU79oYhwHx5K/Ex7DyIoQX+Vt5v5IIWwgU4CQbGZiXoVBoII0aF3gRPyiTeunGIkOHckaLn0z7j/Ai3eIQEyV66KmO0w9Mtcm+9EmhE1qaFywEZfT3C3EY6YqNxO6TLMeuGCVYUSCd74Q+FS/wqWtQTYwMXyvGy9PyIsL0V5K5ThRX5UDGpgAZXGWAw9K8KEmpobxIRXl9Ux1PFn9MZo/cL8B0AmuPTXODCXiRq+86p6UJAYdAlKnQWk5UhhcRcPAu/pCY0AE4PTdJRRFF+GdiulQkBvX7b5KYkrxwtAJBzUtXqpMHDS/CYgqu153KOZ+JX0teurnBDFRPXWOs6oYJxZEcg1PzIttx4dQgiiiC3ppaiWREQf0FsMJL8hKjZ2CU+cq5bFUy8dW8LNKJklTayixfZvYKYdFEw4tQtdeGNFUNq03FYBZ4kcEZYGpc1l5TyYsUpXL5jYFLmGkci6fjofyrBS9oOBnm94eJTmwuQKNoR8OL2IXja1xrgfCSjriWF7H4/D+f4SXeJMT0X4Dz4edEWfNiNMgyO8I+IqHvh4weQVsteEHNsUw9DOGbw/jtFXom6br8X3npfYaXekxen8aHQR1e23p1rEyiVLwYFX9uC5qPtu1RKyPJghe8/CATCeJxEGTj76mTd0terh76FUIdF3lRNJ+zlY0oFS/aWNH1NVO+1swLXqZkiND5aeTrprwoR0XBS/Ghfc1GlIqXlVHBGI/hmXnRFDtrefFE7OhX8uIP8o1Xi1KG+o0VMUo7rhwvFK9h0fHi+cIb/Y28BKlz8CleJtj5EwHTvXtGXqCXW4KX4CiDBD+OlyQooOGFCVfCTlQOS/1Ll+7oT+AbefE1N/ajvHgU5nRvyotHCqCFEGgOMbgbxCAKOeVoDJGdqNcekDTyorsiBvACi0UCss7UU9ySF++l0ckj3XoAL6D5PKA70Ew7UXnMzQum7us+uGPixXvB3wW8BNsPyk7e0ck9IvEil5S4JS+B5ps2gJf2MW0+fdxmFKoUhcc9FDiaXMv6ZVfJjFQfGGkmXrQ1upKXk/pbzie9dnvfKpoJX+Mlxed40W3DQtQ5Ktxs7dvt3mSe1xdAVJkDMSOrC5Fjwp9GrWm/P++2BzG1j8OoE6UpGsoBL8COFyRuKZNUurhljhck0J1DhhdzH8udjsRP3ueoOe0whLDIj8vELRkaG8u2uQJe2so4v3w3YcuKFxDn11xtZ8WLOs5vRrv8x8TseTHcQlIpLzKbJjLL5/YFuXeteKnxdLZqTu1a8iI0BWyWGavy362y50W/XKrlBWS6faGsQSojCdPZ8QKOFGS6MNuspQllx8sGE/W21tb1jywvEZWw5sU0QyrlBZow0ctF9S/bIL2fPGXHC3C4QY1X9y+NY9knO15kfjsj6iEjSoXnst/fs+bFdOV4tbxsQVM8Eq0/OLxPKL002I6XGvAf2Ho0nfVbvQFh56ciYVbZ8bLCRYXag0ua0kI1bHkxXmxdLS+58wk8E/vj9eQ1S162QO3ys8nDxD02IsZux0tWlH8RFedFKfFmPKCUhS0vpphnxbzU2ppoH0kPAlnyornsW5jhlrxII6IoSnvBz0pxHEQHS16IXunXKucFq5uvy6i7PS/4LkIKpc4GXvACZcPJWNMF/TnAcgycF4vr+b/Ei/hlycuyjl2sshavqXl5KPBSmyCDwsOCKAMv+Nd1dHeAnTE2xvszAIV6KC88Nl9c8yVexCyUvNSWr0pvjIEAheTFBz8hvDjgk3aVJ5g8+a0Ca17MojDYfgYpGYk32SFMN9ncrScvQtEkz+R9fbnHNslkimFO4FD8FHpAYWBKXE7F4XpZsmTg4LHH5t+CsIA+KM6LcXCQEumCStRf89fxVuZvWkAwERodIhlPalQuZ7yS8AKmDaOJx0jW+d7Q6PzX7E91NvD45Pl07CKbafhILuXMvjarX34jopmxmu4oS87Hnm94JMEB/vOSsGu7KLy/GEFB1LvVNwthXbgFgmDRPqE3RJYLs7sbZTVJoN/zsMc6lz/mdedyMuDnUN45nnd86hZEN67I/31+lrXPD9aqdXg5+oz59eFilP/Hxv7aLLsLLbWiUJT0Ys5f5j0BWS2hxQT6Vixn0/m837mHLzbZfgbJAqH7UlKFqIwYR0u1mNOykTIl2MD8Uw5l0GfGejIzqPtwZeVoPJYMlRXA7Qxkh5LYlbOX84iDn3dV+31ghN2fYgPycA+W6c9E57VcsEzCo+Xvw3awR7sYY7IAJw/u63vfi8au9GbGoy9/xMHBjP4HKcVMGGnqEh0qxHxovZt5TFct6lAxZk8kslg0AV1j9/I4fA9WkyENdauGB8Q7WIesHapDYzIgRHVPJ/cCRl+3zo28Hfqjp+dLyXgQxCcEwbmeyn/Ytn7UV6X+UXTmk974/Wnztji0R92+o8TBwcHBwcHBwcHBwcHB4SfhPy2//Qn2NmEnAAAAAElFTkSuQmCC"
+        alt="Credit Card" style="height: 25px; background: transparent;margin-left: 1%;">
+    </a>
+      <div class="row"  *ngIf="upiopen==true">
+        <div class="col-lg-12">
+          <div class="card">
+            <form>
+              <div class="card-header" style="font-size: 18px;">UPI Details:</div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <label for="upiId" style="font-size: 16px;">Enter UPI id:</label>
+                    <input [(ngModel)]="upiId" type="upi" id="upiId" name="upiId" required
+                      style="margin-left: 12%; border-radius: 5px; border-color: #25262753; box-shadow: 0px  2px rgba(31, 31, 31, 0.067);"><br>
+                    <br>
+                    <p style="font-size: 18px;text-align: center;">OR <br>
+                    (Scan and Pay by QR Code)</p>
+                    <div [innerHTML]="qrCodeImage" style="text-align: center;"></div>
+                    </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <button class="btn btn-success" style="font-size: 14px;border-radius: 8px;margin-left: 40%;"
+                      >$
+                      Pay</button>
+                    <button class="btn btn-danger" (click)="closeUpi()"
+                      style="font-size: 14px;border-width: 1px;border-style: solid;border-color: red;border-radius: 8px;margin-left: 3%;"
+                      data-bs-dismiss="creditCard">Cancle</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <a class="list-group-item list-group-item-action" style="font-size: 20px;font-weight: 525;" *ngIf="cod==false" (click)="cashondelivery()">&#10050; Cash On Delivery</a>
+      <a class="list-group-item list-group-item-action" style="font-size: 20px;font-weight: 525;color: blue;" *ngIf="cod==true">&#10050; Cash On Delivery</a>
+      <div class="row"  *ngIf="cod==true">
+        <div class="col-lg-12">
+          <div class="card">
+            <form>
+
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <button class="btn btn-success" style="font-size: 14px;border-radius: 8px;margin-left: 40%;"
+                      >$
+                      Pay</button>
+                    <button class="btn btn-danger" (click)="closeCashOnDelivery()"
+                      style="font-size: 14px;border-width: 1px;border-style: solid;border-color: red;border-radius: 8px;margin-left: 3%;"
+                      data-bs-dismiss="creditCard">Cancle</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -73,5 +302,4 @@
   <div class="col-lg-3">
 
   </div>
-
-
+</div>

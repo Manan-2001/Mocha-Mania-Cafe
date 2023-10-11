@@ -13,6 +13,7 @@ import { LoationComponent } from './loation/loation.component';
 import { Advertise2Component } from './advertise2/advertise2.component';
 import { Advertise3Component } from './advertise3/advertise3.component';
 import { FormsModule } from '@angular/forms';
+import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     CartComponent,
     LoationComponent,
     Advertise2Component,
-    Advertise3Component
+    Advertise3Component,
+    PaymentGatewayComponent
   ],
   imports: [
     BrowserModule,
