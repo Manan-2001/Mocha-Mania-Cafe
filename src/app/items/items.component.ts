@@ -10,8 +10,7 @@ export class ItemsComponent {
   constructor(private router: Router) {
     window.addEventListener('scroll', function () {
       var elements = document.querySelectorAll('.fade-in');
-      var threshold = window.innerHeight / 1; // Adjust this threshold as needed
-
+      var threshold = window.innerHeight / 1; 
       elements.forEach(function (element) {
         var bounding = element.getBoundingClientRect();
         if (bounding.top < threshold && bounding.bottom > 0) {
