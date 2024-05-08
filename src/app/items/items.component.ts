@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
@@ -342,21 +341,7 @@ export class ItemsComponent {
       this.total = this.total + Element.price;
     });
   }
-  confirmtoPayment() {
-    Swal.fire({
-      title: 'Please Confirm',
-      showDenyButton: true,
-      showCancelButton: true,
-      confirmButtonText:
-        '<a href="MochaMania/PaymentGateway" style="color: whitesmoke;">Proceed to Payment</a>',
-      denyButtonText: `Denied`,
-    }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
-      if (result.isDenied) {
-        Swal.fire('Payment Cancle', '', 'info');
-      }
-    });
-  }
+
   scrollToCoffeeSection() {
     const coffeeSection = document.getElementById('coffee');
     if (coffeeSection) {
