@@ -11,14 +11,14 @@ const routes: Routes = [
   {
     path:"",
     pathMatch:"full",
-    redirectTo:"MochaMania"
+    redirectTo:""
   },
   {
-    path:"MochaMania",
+    path:"",
     component:AdvertiseComponent
   },
   {
-    path:"MochaMania/location",
+    path:"location",
     component:LoationComponent
   },
   {
@@ -26,11 +26,11 @@ const routes: Routes = [
     component:CartComponent
   },
   {
-    path:"MochaMania/Order",
+    path:"Order",
     component:ItemsComponent
   },
   {
-    path:"MochaMania/PaymentGateway",
+    path:"PaymentGateway",
     component:PaymentComponent
   }
 ];
