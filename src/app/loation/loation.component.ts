@@ -74,7 +74,7 @@ const dataToSend={
   location:this.sendArray,
   total:this.recievedTotal,
 }
-this.route.navigate(['/MochaMania/PaymentGateway',{data:JSON.stringify(dataToSend)}])
+this.route.navigate(['PaymentGateway',{data:JSON.stringify(dataToSend)}])
   }
 
 }

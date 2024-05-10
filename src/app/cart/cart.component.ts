@@ -48,6 +48,6 @@ sendToLocation(){
     cart: this.cart,
     total: this.total,
   };
-  this.route.navigate(['/MochaMania/location', { data: JSON.stringify(dataToSend) }]);
+  this.route.navigate(['location', { data: JSON.stringify(dataToSend) }]);
 }
 }

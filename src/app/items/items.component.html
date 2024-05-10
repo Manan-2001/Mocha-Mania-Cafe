@@ -1,394 +1,723 @@
-<div class="container-fluid" data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
-  <div class="row navbar" style="margin-top: -14px;margin-left: -38px;">
+<app-navbar></app-navbar>
+<div
+  class="container-fluid"
+  data-bs-spy="scroll"
+  data-bs-target=".navbar"
+  data-bs-offset="50"
+>
+  <div
+    class="row navbar "
+    style="margin-top: -10px; z-index: 1000;background-color: white;"
+  >
     <div class="col-lg-12 btn-group btn-group-lg">
-      <button type="button" class="btn btn-light" style="font-size:x-large;width: 150px;" (click)="scrollToCoffeeSection()">Coffee's</button>
-      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;"(click)="scrollToTeaSection()">Tea's</button>
-      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;" (click)="scrollToPizzaSection()">Pizza's</button>
-      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;" (click)="scrollToSandwichSection()">Sandwich's</button>
-      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;" (click)="scrollToBurgerSection()">Burger's</button>
-      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;" (click)="scrollToTornadoSection()">Tornado's</button>
-      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;"(click)="scrollToChineesSection()">Chinees</button>
-      <button type="button" class="btn btn-light" style="font-size: x-large;width: 150px;"(click)="scrollToMomosSection()">Momo's</button>
-      <button type="button" class="btn btn-light" style="font-size: x-large;width: 128px;" (click)="scrollToMocktailsSection()">Moctail's</button>
-
+      <button
+        type="button"
+        class="btn btn-light"
+        style="font-size: 16pt; width: 120px"
+        (click)="scrollToCoffeeSection()"
+      >
+        Coffee's
+      </button>
+      <button
+        type="button"
+        class="btn btn-light"
+        style="font-size: 16pt; width: 120px"
+        (click)="scrollToTeaSection()"
+      >
+        Tea's
+      </button>
+      <button
+        type="button"
+        class="btn btn-light"
+        style="font-size: 16pt; width: 150px"
+        (click)="scrollToPizzaSection()"
+      >
+        Pizza's
+      </button>
+      <button
+        type="button"
+        class="btn btn-light"
+        style="font-size: 16pt; width: 150px"
+        (click)="scrollToSandwichSection()"
+      >
+        Sandwich's
+      </button>
+      <button
+        type="button"
+        class="btn btn-light"
+        style="font-size: 16pt; width: 150px"
+        (click)="scrollToBurgerSection()"
+      >
+        Burger's
+      </button>
+      <button
+        type="button"
+        class="btn btn-light"
+        style="font-size: 16pt; width: 150px"
+        (click)="scrollToTornadoSection()"
+      >
+        Tornado's
+      </button>
+      <button
+        type="button"
+        class="btn btn-light"
+        style="font-size: 16pt; width: 150px"
+        (click)="scrollToChineesSection()"
+      >
+        Chinees
+      </button>
+      <button
+        type="button"
+        class="btn btn-light"
+        style="font-size: 16pt; width: 150px"
+        (click)="scrollToMomosSection()"
+      >
+        Momo's
+      </button>
+      <button
+        type="button"
+        class="btn btn-light"
+        style="font-size: 16pt; width: 128px"
+        (click)="scrollToMocktailsSection()"
+      >
+        Moctail's
+      </button>
     </div>
   </div>
 </div>
 
-
 <body>
-  <!-- Tea section -->
-  <div class="row " id="tea" style="margin-top: -25px;">
-    <div class="col-lg-12 ">
+  <div class="row">
+    <div class="col-xl-12">
       <div class="row">
-        <div class="col-lg-11">
-          <h1 style="font-size: 25pt;
-        font-family: 'Lucida Sans',
-        'Lucida Sans Regular',
-        'Lucida Grande',
-        'Lucida Sans Unicode',
-        Geneva, Verdana,
-        sans-serif;
-        text-align: center;"><strong>Tea's</strong>
+        <div class="col-xl">
+          <!-- Tea section -->
+          <div class="row" id="tea" >
+            <div class="col-lg-12">
+              <div class="row">
+                <div class="col-lg-11">
+                  <h1
+                    style="
+                      font-size: 25pt;
+                      font-family: 'Lucida Sans', 'Lucida Sans Regular',
+                        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+                        sans-serif;
+                      text-align: center;
+                    "
+                  >
+                    <strong>Tea's</strong>
+                    <hr  style="margin-left: 36%; justify-content: center; border: 2pt rgb(255, 14, 14) solid; width: 30%;">
+                  </h1>
+                </div>
+              </div>
+    
+              <div class="row" style="margin-left: 3%; padding-bottom: 2%">
+                <div
+                  class="card"
+                  style="
+                    width: 300px;
+                    margin-left: 1%;
+                    margin-top: 2%;
+                    border-radius: 25px;
+                  "
+                  *ngFor="let menu of menulist_Tea; let idx = index"
+                >
+                  <img
+                    class="card-img-top"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6FX0cYrjmgPXDf1Jgmhu8UA3dj5lp-ts7og&usqp=CAU"
+                    alt="Food image"
+                    style="border-radius: 18px"
+                  />
+                  <div class="card-body">
+                    <h4
+                      class="card-title"
+                      style="text-align: center; font-weight: 800"
+                    >
+                      {{ menu.name }}
+                    </h4>
+                    <p
+                      class="card-text"
+                      style="
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: large;
+                      "
+                    >
+                      ${{ menu.price }}
+                    </p>
+                    <button
+                      type="button"
+                      (click)="add_Tea_to_cart(idx)"
+                      class="btn btn-success"
+                      style="margin-left: 30%"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Coffee section -->
+          <div class="row fade-in" id="coffee" style="margin-top: 2%;">
+            <div class="col-lg-12">
+              <div class="row">
+                <div class="col-lg">
+                  <h1
+                    style="
+                      font-size: 25pt;
+                      font-family: 'Lucida Sans', 'Lucida Sans Regular',
+                        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+                        sans-serif;
+                      text-align: center;
+                    "
+                  >
+                    <strong>Coffee's</strong>
+                    <hr  style="margin-left: 36%; justify-content: center; border: 2pt rgb(255, 14, 14) solid; width: 30%;">
+                  </h1>
+                </div>
+              </div>
+    
+              <div class="row" style="margin-left: 3%; padding-bottom: 2%">
+                <div
+                  class="card"
+                  style="
+                    width: 300px;
+                    margin-left: 1%;
+                    margin-top: 2%;
+                    border-radius: 25px;
+                  "
+                  *ngFor="let menu of menulist_coffees; let idx = index"
+                >
+                  <img
+                    class="card-img-top"
+                    src="https://cdn.shopify.com/s/files/1/1834/9395/articles/15.png?v=1669989346"
+                    alt="Food image"
+                    style="border-radius: 18px"
+                  />
+                  <div class="card-body">
+                    <h4
+                      class="card-title"
+                      style="text-align: center; font-weight: 800"
+                    >
+                      {{ menu.name }}
+                    </h4>
+                    <p
+                      class="card-text"
+                      style="
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: large;
+                      "
+                    >
+                      ${{ menu.price }}
+                    </p>
+                    <button
+                      type="button"
+                      (click)="add_cofeee_to_cart(idx)"
+                      class="btn btn-success"
+                      style="margin-left: 30%"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Pizza section -->
+          <div class="row fade-in" id="pizza" style="margin-top: 2%">
+            <div class="col-lg-12">
+              <div class="row">
+                <div class="col-lg">
+                  <h1
+                    style="
+                      font-size: 25pt;
+                      font-family: 'Lucida Sans', 'Lucida Sans Regular',
+                        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+                        sans-serif;
+                      text-align: center;
+                    "
+                  >
+                    <strong>Pizza's</strong>
+                    <hr  style="margin-left: 36%; justify-content: center; border: 2pt rgb(255, 14, 14) solid; width: 30%;">
+                  </h1>
+                </div>
+              </div>
+    
+              <div class="row" style="margin-left: 3%; padding-bottom: 2%">
+                <div
+                  class="card"
+                  style="
+                    width: 300px;
+                    margin-left: 1%;
+                    margin-top: 2%;
+                    border-radius: 25px;
+                  "
+                  *ngFor="let menu of menulist_pizzas; let idx = index"
+                >
+                  <img
+                    class="card-img-top"
+                    src="assets/items/pizza.jpg"
+                    alt="Food image"
+                    style="border-radius: 18px"
+                  />
+                  <div class="card-body">
+                    <h4
+                      class="card-title"
+                      style="text-align: center; font-weight: 800"
+                    >
+                      {{ menu.name }}
+                    </h4>
+                    <p
+                      class="card-text"
+                      style="
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: large;
+                      "
+                    >
+                      ${{ menu.price }}
+                    </p>
+                    <button
+                      type="button"
+                      (click)="add_pizza_to_cart(idx)"
+                      class="btn btn-success"
+                      style="margin-left: 30%"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Sandwiches section -->
+          <div class="row fade-in" id="sandwich" style="margin-top: 2%">
+            <div class="col-lg-12">
+              <div class="row">
+                <div class="col-lg">
+                  <h1
+                    style="
+                      font-size: 25pt;
+                      font-family: 'Lucida Sans', 'Lucida Sans Regular',
+                        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+                        sans-serif;
+                      text-align: center;
+                    "
+                  >
+                    <strong>Sandwiches</strong>
+                    <hr  style="margin-left: 36%; justify-content: center; border: 2pt rgb(255, 14, 14) solid; width: 30%;">
 
-          </h1>
-        </div>
-        <div class="col-lg-1">
-          <button class="btn btn-outline-light" style="color: rgba(33, 33, 33, 0.835);"><i class="fa fa-shopping-cart"
-              style="font-size:36px" (click)="opencart()"></i></button>
-        </div>
-      </div>
+                  </h1>
+                </div>
+              </div>
+    
+              <div class="row fade-in" style="margin-left: 3%; padding-bottom: 2%">
+                <div
+                  class="card"
+                  style="
+                    width: 300px;
+                    margin-left: 1%;
+                    margin-top: 2%;
+                    border-radius: 25px;
+                  "
+                  *ngFor="let menu of menulist_sandwiches; let idx = index"
+                >
+                  <img
+                    class="card-img-top"
+                    src="assets/items/sandwich.jpg"
+                    alt="Food image"
+                    style="border-radius: 18px"
+                  />
+                  <div class="card-body">
+                    <h4
+                      class="card-title"
+                      style="text-align: center; font-weight: 800"
+                    >
+                      {{ menu.name }}
+                    </h4>
+                    <p
+                      class="card-text"
+                      style="
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: large;
+                      "
+                    >
+                      ${{ menu.price }}
+                    </p>
+                    <button
+                      type="button"
+                      (click)="add_sanwich_to_cart(idx)"
+                      class="btn btn-success"
+                      style="margin-left: 30%"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- burger section -->
+          <div class="row fade-in" id="burger" style="margin-top: 2%">
+            <div class="col-lg-12">
+              <div class="row">
+                <div class="col-lg">
+                  <h1
+                    style="
+                      font-size: 25pt;
+                      font-family: 'Lucida Sans', 'Lucida Sans Regular',
+                        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+                        sans-serif;
+                      text-align: center;
+                    "
+                  >
+                    <strong>Burger's</strong>
+                    <hr  style="margin-left: 36%; justify-content: center; border: 2pt rgb(255, 14, 14) solid; width: 30%;">
 
-
-
-      <div class="row " style="margin-left: 3%;padding-bottom: 2%;">
-        <div class="card " style="width: 300px; margin-left: 1%;margin-top: 2%;border-radius: 25px;"
-          *ngFor="let menu of menulist_Tea; let idx=index">
-          <img class="card-img-top"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6FX0cYrjmgPXDf1Jgmhu8UA3dj5lp-ts7og&usqp=CAU"
-            alt="Food image" style="border-radius: 18px;">
-          <div class="card-body">
-            <h4 class="card-title" style="text-align: center;font-weight: 800;">
-              {{menu.name}}
-            </h4>
-            <p class="card-text" style="text-align: center;font-weight: bold;font-size: large;">${{menu.price}}</p>
-            <button type="button" (click)="add_Tea_to_cart(idx)" class="btn btn-success" style="margin-left: 30%;">Add
-              to Cart</button>
+                  </h1>
+                </div>
+              </div>
+              <div class="row fade-in" style="margin-left: 3%">
+                <div
+                  class="card"
+                  style="
+                    width: 300px;
+                    margin-left: 1%;
+                    margin-top: 2%;
+                    border-radius: 25px;
+                  "
+                  *ngFor="let menu of menulist_burger; let idx = index"
+                >
+                  <img
+                    class="card-img-top"
+                    src="assets/items/burger.jpg"
+                    alt="Food image"
+                    style="border-radius: 18px"
+                  />
+                  <div class="card-body">
+                    <h4
+                      class="card-title"
+                      style="text-align: center; font-weight: 800"
+                    >
+                      {{ menu.name }}
+                    </h4>
+                    <p
+                      class="card-text"
+                      style="
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: large;
+                      "
+                    >
+                      ${{ menu.price }}
+                    </p>
+                    <button
+                      type="button"
+                      (click)="add_burger_to_cart(idx)"
+                      class="btn btn-success"
+                      style="margin-left: 30%"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- tornado's section -->
+          <div class="row fade-in" id="tornado" style="margin-top: 2%">
+            <div class="col-lg-12">
+              <div class="row">
+                <div class="col-lg">
+                  <h1
+                    style="
+                      font-size: 25pt;
+                      font-family: 'Lucida Sans', 'Lucida Sans Regular',
+                        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+                        sans-serif;
+                      text-align: center;
+                    "
+                  >
+                    <strong>Tornado's</strong>
+                    <hr  style="margin-left: 36%; justify-content: center; border: 2pt rgb(255, 14, 14) solid; width: 30%;">
+                  </h1>
+                </div>
+              </div>
+              <div class="row fade-in" style="margin-left: 3%">
+                <div
+                  class="card"
+                  style="
+                    width: 300px;
+                    margin-left: 1%;
+                    margin-top: 2%;
+                    border-radius: 25px;
+                  "
+                  *ngFor="let menu of menulist_tornado; let idx = index"
+                >
+                  <img
+                    class="card-img-top"
+                    src="assets/items/tornado.webp"
+                    alt="Food image"
+                    style="border-radius: 18px"
+                  />
+                  <div class="card-body">
+                    <h4
+                      class="card-title"
+                      style="text-align: center; font-weight: 800"
+                    >
+                      {{ menu.name }}
+                    </h4>
+                    <p
+                      class="card-text"
+                      style="
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: large;
+                      "
+                    >
+                      ${{ menu.price }}
+                    </p>
+                    <button
+                      type="button"
+                      (click)="add_tornado_to_cart(idx)"
+                      class="btn btn-success"
+                      style="margin-left: 30%"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Chinees section -->
+          <div class="row fade-in" id="chinees" style="margin-top: 2%">
+            <div class="col-lg-12">
+              <div class="row">
+                <div class="col-lg">
+                  <h1
+                    style="
+                      font-size: 25pt;
+                      font-family: 'Lucida Sans', 'Lucida Sans Regular',
+                        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+                        sans-serif;
+                      text-align: center;
+                    "
+                  >
+                    <strong>Chinees</strong>
+                    <hr  style="margin-left: 36%; justify-content: center; border: 2pt rgb(255, 14, 14) solid; width: 30%;">
+                  </h1>
+                </div>
+              </div>
+              <div class="row fade-in" style="margin-left: 3%">
+                <div
+                  class="card"
+                  style="
+                    width: 300px;
+                    margin-left: 1%;
+                    margin-top: 2%;
+                    border-radius: 25px;
+                  "
+                  *ngFor="let menu of menulist_chinees; let idx = index"
+                >
+                  <img
+                    class="card-img-top"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIuzaP8vHVjVUIAnDcX-ZISuJ-cA_kBZNtcQ&usqp=CAU"
+                    alt="Food image"
+                    style="border-radius: 18px"
+                  />
+                  <div class="card-body">
+                    <h4
+                      class="card-title"
+                      style="text-align: center; font-weight: 800"
+                    >
+                      {{ menu.name }}
+                    </h4>
+                    <p
+                      class="card-text"
+                      style="
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: large;
+                      "
+                    >
+                      ${{ menu.price }}
+                    </p>
+                    <button
+                      type="button"
+                      (click)="add_chinees_to_cart(idx)"
+                      class="btn btn-success"
+                      style="margin-left: 30%"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Momos Section -->
+          <div class="row fade-in" id="momos" style="margin-top: 2%">
+            <div class="col-lg-12">
+              <div class="row">
+                <div class="col-lg">
+                  <h1
+                    style="
+                      font-size: 25pt;
+                      font-family: 'Lucida Sans', 'Lucida Sans Regular',
+                        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+                        sans-serif;
+                      text-align: center;
+                    "
+                  >
+                    <strong>Momo's</strong>
+                    <hr  style="margin-left: 36%; justify-content: center; border: 2pt rgb(255, 14, 14) solid; width: 30%;">
+                  </h1>
+                </div>
+              </div>
+              <div class="row fade-in" style="margin-left: 3%">
+                <div
+                  class="card"
+                  style="
+                    width: 300px;
+                    margin-left: 1%;
+                    margin-top: 2%;
+                    border-radius: 25px;
+                  "
+                  *ngFor="let menu of menulist_momos; let idx = index"
+                >
+                  <img
+                    class="card-img-top"
+                    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYWFRgWFhYZGRgYHCEdHRocHR4eIR4aGh8ZGiEcHhweIS4lHh4rIxoaJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHhISHjQrJSs0NDQ0NDQ0NTQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NP/AABEIAMABBwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAEAQIDBQYABwj/xAA+EAACAQIEBAMGBAUCBQUAAAABAhEAAwQSITEFQVFhBnGBIjKRobHBE0LR8AcUUmLhcoIjJJKywjNjotLx/8QAGgEAAwEBAQEAAAAAAAAAAAAAAQIDAAQFBv/EACoRAAICAgICAQMDBQEAAAAAAAABAhEDIRIxBEFRBWGhcYGxEyJCwdEy/9oADAMBAAIRAxEAPwBgSNNANZ9dD5zEU84dWiBA2JPfn2/xUqW5MncdPXnNOdJ07amfWrEQfE4FM8BQeh0Gm23TvzoTE8OTNlgdJBBA/cGrU2jlBHn1Oh56ecTUb30zE5GmY2023J6k7+VazFIeGrOg9YgTuQKhXh6ayC8HSNQOQGnWriCTnYifyr56zpt69RWx8KcIEDEOokf+mIEmPzHyMx8elZyoyVneEvC64cC9cUG8w9kQItg9B/UZ35DTrOopKWpN32VSoWurppQKFhEiuFOjrTTcnRR+/Kkckg0czAbmhL2N6UPiZ9ok+7Ejz0pLdqRIg+VDmmGjjeZqciGprNmaMSxTi0Cpboq3YqcIBqarrysxJLFRy008p5UspUFD8RiApAHOmm+wYgxoJ0HKoLiA5XeQUkRsCdNesVNfxAKBydDPy0qLmMonWcVmEiCPhUiXQdqAe2xWSSq9e57VGlvIM0lh1kEfACaMZu9maLhXp6vQVl5AIohKuIEV1RqakFYx1JSxXVjDYrqWkrGPMPHvgdQWxNgELqbltRsTu6gcuo9eteZvfKSqnSNDrPX9K+miOteL/wARvCAwznEW1JsuTI0hHOvT3SZjpt0qkZXpitGOuE6TExtroN5+1dSg5FDCCxHMSOQ59BPxrqYB6I9wEAKNtCZ/fIVMijrC9O3yNRWnABnUHYaHXnpROFshgJB78+ZoikBygaEgExoTqB17U1bByuQCdYGugB6/GrF7STmbQDQDbY6GPKlF5WEW9eW2h6fehZqO4Hwo3rhRtESGfYkq0wmo0mIkRz6VvJ6CANAByA2FCcMwQs2wkDO3tORzaAInnAAHpRVI3bHSocK6abNdShJBTl2pi1zXOm4+tJJ0hkJdYqQJgnn0pm7AhwSP35RSXnUgZjr0pLGFSc66H61LscrfETkBVUe27AHyXX6mi7NnIgDEbeXxPOp7oXMbjflEDz61n8RxpWcoiyZ6mahKXGXffQyVosFxOVpDAjmBvH3q1tX5rJYq8oILiNZDjQ9IPI+tWGBxXLly8qtin/ixJIucXionttUX8w+WQgfyaDHTbWq/ihYQyCZOon5in4e66p7Vsknly/xTNfJkFKfxFBZckDUHlGm9QHHoctu2uaDq0woP3qu47hsTeVbaMqKw9puQjZAB1nftQ2H4auCtFVcs7mNSSF/09OfwqTT/AGH1QTjsY7XkUMSgaI5bdPTn1o3G28hDgwCPaHLzqPh9kGDoT99povjNwALOzaR2IP6VuNJti2DYO77RM6HSO4J1HmD8qt7TTWWwZKaEyJ0Pb9avcFdmrQloVlkopS4HOhmxAnJtyJ79Kbew0A66xpTSnXRlEn/nEkjWQJ9NvvTbOMR9ifhp8aqncW1g6sfeO/p5ClRmZZDGpLM2wuKLoMDsa6s/hrro8lwVn2lOn7NXSXQQCDINWjLkK0Smh8fhUuo9t1DI4IYHoanmaSmAfPHing74PENacZk95SRoynY9JGx7+ldXr3j3w0MbYyqQt22QUbsSAwPYj5gV1VUkLRn8KygN12B/flRIuLbUanMROXnr9P8ANBPcC7CTvMg676x0imZzJJ1Y/L/FEQbirzuw+Q5AeVW/g3h2e6brMSqQSNIL65QeuuvoKpbzSDMho369preeHcH+FhkX8z+23+73R/0xpQk6QYrZZk11JXUg46uFJXTQsxHib2Vag4bdzZp86Ax+IkxUmAmDG5FTlsZFhe4cG1LfOKYjC0DmcR3P3qne9dZ8glOpI+lLc4Ch9vEOXA5EyP8Ap29ag79IovuHYvEi4hgxG361nvDnBzYZ3di0sWBbzmB2FGYUfjPCApbQe9tMbAfDehcfic938FSxAEseXZZ6mp8d8huWqBrmJNxbhSCUckA8wdx8/lRHDr+3Lt9qrcEoto6ncsZPmZP1o7BW2bVVYyZ0BP0qkI7snJmha6cmZdSuoFDYLiTu8EsqxuOtGYLCvGqMPMEU1uHurEohObcRG/OTV3GwWCcS4uLbKiMzO8+05kKBuY2noKhx5D5TmkLrM86MucBtyXvuB/au4/3Hn6VCXwiDKqZ4/qJafTagsdmbBsBxRM+QMs+dF8bS6+QJbdu4BAGm+Y6UicYCaW7aoP7VVfoKY3FLr0zxX2wcqEw/B70CQoPdx9iaOFt7YGaAvNwQQPXlPXtUFkO3vMZq+wGH0M6giCD3o/00kawawqDVSJPf7UU7lhPIbjnQSIAXRlnKYH+kwRr2+1NxeKVBPOoS0OkRYy2GDFdaj4VcK2h+IILbDnrPzj71W4PF/iu8SMsadZ+1RcPxTvczuCFQlVU/Ak/vpSRTvozYbxC2uuYeRG48jT+BYkBSufNB578qG4rdDqQGgnbtQPBb3tECPZ0JH9U6/P6VWOmI2bS21SUHYei1NWFENdXNXUTHmGkkiPr86R5ER157HtXLyy6E9B+4/wA1zX5EEkNqCI06T5/pViZ3DcIbt+1bb87TH9o1PyFel3GlieXLy2rI+DrWa89xoJtW8sgz7TmJ+AatXNTk9jRHVwpKUUrGFqLFvlWp0WaZccBgCoPc1OcqGSsz4BLGrjB2opuMyIc+Qbaj7iiEuAoroMpYSP30qaypB4sdisMGHfrVdfwjuQvvDnygd+1E2OIswOdChHM7HyqTGX/+DKn3idR20qjcZI20yK7+GohnA7IAPmf0qrX+WRiwVmY8yx/8YqvdTOsk0pAXQ7nlSSnCCuVL9QxjKTpFiOIW11SygPXKCfidac3Gbh20qoUMQTGUDSTTjhhozOYI93/861xT+p4lqNv8I6Y+LJ96LFOI3D+arJb10pIINZXF4X2h+FmVjBJkgbDlWp4BicytbYyR9RT+P9SjkkotU2DL4soR5J2jP4hHdznMwduQp7oqCXZVHUkAVTePOPHB+6JdzC+gkn57V5Pj+J3r7Frjs08p0HkK9FWc0Y/LPWcV4swVve7mPRBPzoez/EHCTEOB1ifvXkioSYAknSBS5e1Hi37KLj8H0hwHG2sQge06uvbcHoRuK0aLAr5t8D8dfDYpGQMysYZBzTdjHUAE+le98H8Q28QYRXX2QwzKVkHpNI5Vpgli1cdr+ATxEWS9bbPltsGD9SRBWDy/PVO18vdY/kRNB3J/QfOrXx/YZsIzoJdCGHodduxavK8F4guqCGSZ6GPqKSUd2Im6N2vEUR1bQD3W8v8AH60TdxKAkxvrNYjhwe6xLkqp5TpWidkVYXWNugj7UGmLdEHEMWZIX3yNP7AfzHv0FTcEXKAo5UCiAsYkkmSetX3B8LqNN6eMULdmhwm1GoaGwyRRIp6Ch5rqQmurGPJLF0MJO4O3Ucopzsfv+/hQCPpr+/0qVXjflrvVyZu/BVqMO7xq9yPRBP1Jq/FVnhlIwdnSMxdv/mQPkBVnUn2OhwpwpgNSpSMKGXrwRZNQXWV1kH16VFjLbvsAAf6jFRYbhuQSXXN1H01Oorlk3Kyq0JiFa5kQmDmAJHNOcd4qTimICA9By8qlRrbOIOZlM+ydv8VSeMLWIbILCZw7Q5BAKg7NqRI3mufIpOL49jxpumH8LJuAmYBGk86Q4kBWsxBBLL3BOo+NclxbFoAkZyMsb6ms/hcbnKNO5b0ksIoqfFpLv2ZxtNljiWgCAJ2HmdKkgWVhoLTv5jmOlNLe2oBAOUkT2Kn6TQpsM3tM4OaQPMaV5/1Cbtfg6/FiqEQvduLDewvveXKO89aLxbIgIJ01I1nT467V2AxCKp5zp6ievnVVcxWdnlDqMoJ5elcDUXBV37OtRfJ/Af8AiCVczlO3LqKZ4fuMt8yTlzEjWdGPz3ofDrCAHNIGh1IEdutL/MsLgaVZiAYAPsgcjpvS458Xr07DJJpx+Si/jbhINm5yzFfiJ/8AGvLNK9y/irgvxcBm3KFWnygE/M14UbhGn7kV9limpwUjxGuLof8AvyrjTVae/wCvSlB5xVAWPtuyOrKYZTII617X/CF2uWnvXHZ3zZBJnKog6DzNeJSZ1Eetem/wW4iFu3LJPvgMB3WZ+UfCknFOisf/AC0vg9gx9gPadTsykfERXlmGw6ZirAEgxEcxXrY6VgLWByY2+p2Lhl/0sqn/ALs/wpJEEtEdjhyTARh3ggfGi24NGoUt5Gr/AA1lSYgVJbBVivqPLpUpToZRKLC8OAOqwDp+4q3w2GCwRQ+KzktkjUaa/m11+nwpuFxBOhVpG+kVTHkTWwONFy6Q3nSVzOCqkHlHwpCaqKca6mmurGPGc3f97+tJcubk+sU1VnX68qHuGeZ1+fn2qxI9d4If+Vw3e2D8daNoHgrf8rhj/wC0n0oyovsceDSYm4QsikmnZZBB50klaoaLpgv4Luus5jtrt+5oZ+GoNbjs3OJP7FGm6UQA6RI9KRHQprz1qHFdFLKx8XqEtLGYwAOfmfnJ6Uy7dWyhzuXfUwPZVQPmfvRqZEDXJEwQOw5msimJF5brts7GP9I0A+9c8006QyY7huMOId3PuIPY7nYn7UAl/JfsWVPvFvkCfqal4dilQFRoBpH3ArOWcdPErL/lF1V9Ccnwlj8KbFhUpL8hcuze8TvFGWNyGWem2tQ2bDtlYkhCd+cHSj+P2lDgMQNTv5AnboATTbuKE2QjFs5HqoEMdpHKvI8xN5Gl6Z6HjagqG2LJ/HNsbKuYHcksYnv7u1R3+Jf8fIqqTvrqJ60/iV1jAVWV10DAiJOhDAaxqdapMTgvwbntKSzHfl69K51xcUq2vydEd7l8Bw4nLsoGY5io1jURBExAG896lsYkMrZYzLuSREjTTrzqivXysllbeDsR8aIsYpcoCiAdj5TSyxJK0hzXY+2bvDriHVgjT5iTXzxiLUPBkcx3B2Ne/wDhjEs2e02qkTPIAiPvXiPiDClMRctna2WXvlDH6fevofpsrxU/R5Pk4+Mn+v8AJW5uQpc1IuXpXAiND8q9I50kdNaX+HeIKY603KSp8ip1rNRO1FcFxn4V+2+wRxP+kmG+RNBqx4viz6oVtjWY4/YKYq3eGxUo/kNR8Cx+dXXCcSHtggzGnrp+tCeJzlti5/QQT5TB+TT6UklaJVTokJykOuqmJjp1pblyCSdgBB6yarV4gQhdBKjdRrvzAoQ8YtusA5R/S8qPRiNPhXFPTKLZNw7O2IdGUhUj2jsxadu0AH/cKi8VYg2FR1J9t8hA7gtPyNLf46iKH1bQbEGZ7jQis/xe/wDzj22YlFGYok6HYZu5796CqqQG/Zf8G4hm9nluB05GtAjyKw3CT/xSB+SV9AzR8q2NhtK7IXRG9hM11NmuqoTxtyI05Ch7w9oGP31qe8SInbT4x1pXtgId50MmIMxAHP7VWyR6Z4fecHhj0Qr/ANLMv2qwBqh8GXw+CQCPYd1jzIf/AMqvQajLtjj6chqMGnA0owNxG2SCRVNfxQRQBJJ6dekCtG6yKBw3CkVmuADO3PoOg/fSpZIqrGj2ZTiGFxl1GW3bCzzdo08gD86rcLwDHIoTLb10988ufu16Ol4kHXb3vTlQOJB/mVVdgMzdApB1+NQqMav2Pb6POeN8OxOHTUI06nKTI7gEa1nhbIyup9oEMD3GoNeneKLqOVWecfI1i+JcONvUKch1mDCnoTymrYZp6Qsj0HxSQclxROaCIPJ1nf1oHD2wuVmAJGoXMeugjbfU+VSkm7w2yykSEAkidbcptz22oLh972FzQzLOwIBjY99a8Hz4uOdv7nqeK7xpF1wy27Mblxu66aQQf0mazPi3j6qwVFUsx1O/LURy60XxHizLbgn3tIEgkaQIMER0rLYVPxLrMyEwNDOisTqSPzaTp3pcajJXJaW392W402/2LvCLKDzIMk6hufTaq68MriOUjT/HLWrVLeVSFGhOpkEHfbvTMTaWNtQdTr6adqmp1Jv5KJh3h1GW6CT2iaw38VOHFMaxUH2wGHm2h+cVueF4dsySQCG1O2g1gjr1qf8Aing4sLeUSUUieYDiJHyr0/psncv1Rw+Z2vujw27IGo1ie/nrU/E8MbTAKfZYBlHMBgG107in27Yd2Ck6qSDO+UFtZHMA1JgA997dprmVElcxAIRNS2sSdFgT2Fe2efTb0DnMNM2aAMxjRc2wJ+VMuOsc578603iJ8MmGSxYlnDAk5SGIhvaYgQZJGk8xpTPCngrEY11IQpakZnYEAD+3+o0rkkOk/Z69/Cm2w4ehafaZiPKY+1abidkPadSJBBEeYipuH4JLNpLSCFRQo8h96fiU9hvKljpUxJyuTZkOE8WtumVUIHl0ox7Ftj7jE9xl+ZrDcM8R2Ld26jXFXLcdYIM6Ow0019KvbnFnvaJKpzbYt6cqg4tGsF8RX1u3EsJAVdXI/wC0dtY9TQ3FwtsW3n2UBBA3ObYDuSKEtXQly47aBYUdTA2A5kmagRXusGfrKqNl/Vu/wijCHLsDZb+GUb2nf3nYsfMmfvW0s7CqHhGFiNK0NtaulRMlWurhXUwx4XY4gAIeYOskac/Wlv4oSXT2iOR0gbbHUjc1TI+ssJImOf0/etSfjZpYRtAyzz7/AGqpOj0f+Gl/2MTbnQMlxR0BBRv+1PjW3Rq8l8BYwWsagJAF0NbI/wBQDA9znRa9WQ1OfYyJwaUGogaepqYxPOlOtuIkbjl5VXjiChyrSI+B9ae7/nRgTzXqK55ytjxIzZLuHmAWIYdhz7H9abjyTmb8p3yRmgbT2HrQmNxWRXK7t8orF8PxWOF7VJDNAjYgnTnIrnk23RRL2WqthUfOVZm3Bd257kLtFHXeJpcUpkGVhBEDUHSKKxOFTLDopBMlSoOvOAaqU4lhkJQWVQj+sL8dyIpVcNWbTD/C1g/ydywwI/DdgO6XAGBHqW9RVRhZUuu2QwZ0P+etW/A+No+Iayse2hPTVTp8ia7inCHc50HtA6jTWNqn5+HnFZF8U/8ApfxcnCXF+zM8TtkskrJO0SCSY37UXh8OltSvvXG92CIkkAkx7oFEvgXNwlkPUCef+IFF2uHszSEA8vsa8l5KSR6DI7eHYKZXYjXaCaIOFQAZpB3ZdNuX2qwscIukEDmdz06x1o6x4aLNndtYiBSww5cj/tT/ANCSzQj2yj4YC98BVkLJk9TA36xJrYcZwIuWcpHKp8LgbdkaADud6ruMeKMPY9l39o/lAzMf9or6DwvFeGD5ds87yM/9SSr0YHBfwqCXM4uHKNVjRgRtrRVn+FyF8xuOJYs3fNqfjWiuePMMsApdBbYfhsZJ5ac9abxDxylsf+k47nKI89SflXVSqr/IiyTTtJL9g/AeDsHaIZbCs39Ty5J6y5NXyrAgQB0rAXfGruuZMoHnm/Ss1xDxRiXOVbpBYwI0jvprVEorom5Sk9uz2NsQo3YVU47iwZWW35FiDE9v6vT4iqDw9wj8BRedme4RH4jksQDEwTtJHyq9xrIUzkSBr8e9Rlkp6MomaHhmw6kuM3XMo3PPWon4NkQi05HQHUfr860KlHHsvE9dajOGymWJE8wJHypeRmjBNhHe5D7r+/2a1HCuFRAruIYUI6udZ0n4x9K0GCUBJ5nQfeuiHViVQmHsxsKIApVWnU5hIpK5q6sY+Z3aDmI30I5CiMO6wRzzT1kRQhc7RrTUkajkd6ewUHgujq4BDqQwLCACpBET3Hyr3bA41btu3dXa4gbyJGo9Dp6V4H+MzCGJPMEz+zXo38NOK57b4ckyhzoDvlb3h6Nr/uoS2jI32epFahgaeppKCD47IrZnEiBpVReCKc9lyo3yzPwG1XWPwi3UynQ8jWD4lhGw7Gc+U7FeXffUdqjKO9rQUzRNxEEQ4n+9Dv5g/wCaOs45Mq5XAI01ESO9ed8QuEKHV2g8+voBHoaHCO6gvedV5ANHTfLSSx1tDqR6HxXGhUnNJrNuEdQWguBoe3Q0DwtFBZc2ZSmpYz7xgAk/vWq69hr6uLdoF8wJAkSsdSSARqNajwblsNkrY84bEW7gHtK23UbEeRGnrXrvBOMWLyhkcAnUqdwe4rymz4PxLuHvsq6+6DJy+egBNaO54ftOgRLaq0hZIk+0YBmZFdScVGhatnpDvaO5X5UJi+M4eyJdgv76ATWdS0uGtrbt/lG/Mk7k+dEW7X4i7tPUb/DnXL/ZybUVfzQ2/k65/ECxJVAzEf2lf+6PpQOK8bXSCVUKO+v0ihsdwFDpcQHXR10I6EEa+lUvFcEbYysZB2P6966cc9bQjVDL3iPFYh8iXCM2mnsgdyRr86PwPhF0cXXfOZBk6R1jU0zwbw1Wuk9P39631lw022Hu7dxWyS9BiDX8Citnyj2F08zpWeHBUxLszjMBOnJfSYJPyrS8SVcgQsVGkkbkCgsPiERSlpZA/LMT6nc1yuSUtlEtGFxnBVtXSiErmBKnlpyI51YeEcKCC9wAHMUj/SSvw0Jq3xVxLs6ZXB2OhDDz2qDwYAEaTmYu5YnlLsYHSJHwq8MnKIjWzXvaBVRMD97UJxBwUdF/Ko0FSHEiSB+UZj9hQWGUw7naKRKw2N4fZQsD/WOXUfqPpVkUy7GRzBqlW4Vw+Ye8CSPQzFT4XFO65pgR3p+OhbIOMW5X2TtBy+o2+enerDB4iQI2AArMcVxzM2RNzp0AFXfDDAFUha0JLsvlaacagttUmarGEY11NIrqxj5oYHlUWcjalZ52nTfvSE/OmMKH6z21q44FxH+WvJcXVlaGHVDow+Go7xVOh12+dELZgzAM8udZAZ75hr6uquplWAII5g61MDXn/wDDrjhZWw7kSplNdSvMen37VvVNBqgkytQmPwocEETRANdNKYyGL4UERgEkHWKz1zCPMKoUDzLfMQPhXpl23PKgcRw5G5DWs4pmPOcbdVFyjMYMtEnMeQk9OtWXgb8a/fa9AC21yZecmGnzED41osTwBGERS+H8IcKHABlmBAHPSPtSTilG0FGgbFsDke2Sv9QH6UPfwTOBkbKsz7SkHrp186mw+IxL/lVR1J1+EafGlx19UWGfM3Mj6CuR2yqdEXFBCFguZgNcoOuh/L1mKf4ZI/DUwQSJYNvO58vKq61j3ZiEQkdTt+tWi3mRM75VG2/PptqfKsrWzE/FwVTOPyxPdSYPwOvxqh4th0dN/ZIPoat8VipsEsNHYAdwTWJx991RxMrEqehH5T3FFOmKy58DWXRLmY+0rkTyIGoPqCKvX4kqkHQsOYECsR4T4tnsurOQyuRA3MhTFaM4XEOoFsKindnH2q0ot7YvKtFnddboh8yyNwY357Gs5grb28QLJcvmEid8vJvLl51f4a0yAKzq8a6aafE0lx0a6Li5dECk8xBJ+9c7ilK2iik6B+N4MZQ+zbBuvQE+dZvwNjiFdX98OwYHecxP+asfE3Gle262zKoRLDYuHXbsOvWsucSUxH4mwZVDD+4c/p8KtjhdiyZv+GXcz3Ad2irTHqCmRdtvP961mcBeWQ4bfSux3GcgJEnpGpJ6AU/H0hLLV7Y/CyyJFR/iqlkLOoEb79Kyj8SxD+6FE8pJjzIiibGHdvfaewED4706iwMlwyF3LHb7/vT0rQ8PWq6xaJMDQVdYS3ApkhQ9aeKjQU+aYYS6dK6qrxDxdMNaNx2gSB8SBSVqCfPBqTIdNYinKijWdeh+s0xmncb8qIBwAjfU1MbmnPTl0MCdd+gqNRpHbb970yJMHkJ/xRME4bFMjo6GChlT0r2fw7xhcTaDiAw0dZ2NeJZhyHwq14Bxt8NdDjVDAcdR/wDYVmrMe3g0s0HgMcl1FdCCrCdKKBpTEgprCmhors1YwsVBd9lw3ID51MpofHoShjcfT9xQkrQQbF8VIG9MwQVjnfXt08qzN9X1NS4fGNsZ+FT4I3I2yY1FGw8pqjxGMOIuhR7iHTpm5n02+NUN3Gu7ZEnXdulXWHy2UA6D51OWO++hlIm8S4wJ+DbU7NJ8lB+5FYHi/EmOe0s52cx/aMx+dWHGuLk3J3IEKvVjr/0gZZNVXD8IS5djJnU9SdTRjBXbA5Fl4WxSYYQ6e2STniZnn8NK0mI4y96Et7nmZAXv/iqjD4DPodh+9KsLWFe2dpHIj71ZxTAF4tBbTIjTdcRnOpzHn2Gu1U+PnOcOjM2RBmJMlnbmT5fWrDC22d87iCmsdelVaJ/zF15jNBJPYAVPgrNyZB+ALSMPzRrzE6BVA84puAwbOZPM1Y28MX0CnJM67sep6CtBwrh0EEiqpUawTDcLZBKQOxEj4VA3B3LZnOY/IdgOQraJbAG1NewDTGM1awUaRRqYXtVr/LilVAKBgWzYAo+2lcig6xUk1jCgxTXuBQWJ0HOkmvOP4jeLMoOGst7Te+w/KvTzP0rIzMv4/wDEP81eKKf+HbOn9zbE+n611ZdEFdRAOLQR9aRiBB/fLaog/emK3rQs1BLvGs6/T1pnrJ3NQ5pNKlazE6vSzUINKHo2ajS+FvEr4Z4bW0x9peh6j9K9bweMS4gdGDKwkEd68Az1d+HPEdzCtpLWyfaXp3Xv2rPZqPbAaSaquFcXt30DW3BB5cx2qwz0DEwpxJqAPSl6ISq4nhCCWUb7igLdy2N9DzmtG4mqfiHCQ8kaGhQKK9MaiEkRPahL3Ec5y8tz+lD4ngt5TKwf9o+1NscOuTqoHkKVxBQBh8EzuTvMZmPzitPhOHIAFA2puGwpAAAgeVW+FsbaUFEATgMAoFWaYZajsrFFLTjAl7hSNrqD1BI+lAvwIT1HcmruaXNWCAWeHBaNtWwKdNKDWMPpDSZqTNWMca4AV002axh+amzTSw3NYjxf4zW2GtWSGc6E8l/zRSs1kvjfxcthTatEG6w88o6mvILjliWZiSTJJ3JPOpL7szF2JLNqSdye9MRdPOflyrAGqtdUloSR2npzrq1As//Z"
+                    alt="Food image"
+                    style="border-radius: 18px"
+                  />
+                  <div class="card-body">
+                    <h4
+                      class="card-title"
+                      style="text-align: center; font-weight: 800"
+                    >
+                      {{ menu.name }}
+                    </h4>
+                    <p
+                      class="card-text"
+                      style="
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: large;
+                      "
+                    >
+                      ${{ menu.price }}
+                    </p>
+                    <button
+                      type="button"
+                      (click)="add_momos_to_cart(idx)"
+                      class="btn btn-success"
+                      style="margin-left: 30%"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Mocktail's  section-->
+          <div
+            class="row fade-in"
+            id="moctails"
+            style="margin-top: 2%; padding-bottom: 2%"
+          >
+            <div class="col-lg-12">
+              <div class="row">
+                <div class="col-lg">
+                  <h1
+                    style="
+                      font-size: 25pt;
+                      font-family: 'Lucida Sans', 'Lucida Sans Regular',
+                        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+                        sans-serif;
+                      text-align: center;
+                    "
+                  >
+                    <strong>Moctail's</strong>
+                    <hr  style="margin-left: 36%; justify-content: center; border: 2pt rgb(255, 14, 14) solid; width: 30%;">
+                  </h1>
+                </div>
+              </div>
+              <div class="row fade-in" style="margin-left: 3%">
+                <div
+                  class="card"
+                  style="
+                    width: 300px;
+                    margin-left: 1%;
+                    margin-top: 2%;
+                    border-radius: 25px;
+                  "
+                  *ngFor="let menu of menulist_moctails; let idx = index"
+                >
+                  <img
+                    class="card-img-top"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0wVmalDiyqbgUAhlXz7O1j8rzIGn1s6WAvg&usqp=CAU"
+                    alt="Food image"
+                    style="border-radius: 18px"
+                  />
+                  <div class="card-body">
+                    <h4
+                      class="card-title"
+                      style="text-align: center; font-weight: 800"
+                    >
+                      {{ menu.name }}
+                    </h4>
+                    <p
+                      class="card-text"
+                      style="
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: large;
+                      "
+                    >
+                      ${{ menu.price }}
+                    </p>
+                    <button
+                      type="button"
+                      (click)="add_momos_to_cart(idx)"
+                      class="btn btn-success"
+                      style="margin-left: 30%"
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+       
       </div>
     </div>
   </div>
-  <!-- Coffee section -->
-  <div class="row fade-in" id="coffee" style="margin-top: -18px;">
-    <div class="col-lg-12 ">
-      <div class="row">
-        <div class="col-lg-11">
-          <h1 style="font-size: 25pt;
-          font-family: 'Lucida Sans',
-          'Lucida Sans Regular',
-          'Lucida Grande',
-          'Lucida Sans Unicode',
-          Geneva, Verdana,
-          sans-serif;
-          text-align: center;"><strong>Coffee's</strong>
 
-          </h1>
-        </div>
-        <div class="col-lg-1">
-          <button class="btn btn-outline-light" style="color: rgba(33, 33, 33, 0.835);"><i class="fa fa-shopping-cart"
-              style="font-size:36px" (click)="opencart()"></i></button>
-        </div>
-      </div>
-
-
-
-      <div class="row " style="margin-left: 3%;padding-bottom: 2%;">
-        <div class="card " style="width: 300px; margin-left: 1%;margin-top: 2%;border-radius: 25px;"
-          *ngFor="let menu of menulist_coffees; let idx=index">
-          <img class="card-img-top" src="https://cdn.shopify.com/s/files/1/1834/9395/articles/15.png?v=1669989346"
-            alt="Food image" style="border-radius: 18px;">
-          <div class="card-body">
-            <h4 class="card-title" style="text-align: center;font-weight: 800;">
-              {{menu.name}}
-            </h4>
-            <p class="card-text" style="text-align: center;font-weight: bold;font-size: large;">${{menu.price}}</p>
-            <button type="button" (click)="add_cofeee_to_cart(idx)" class="btn btn-success"
-              style="margin-left: 30%;">Add
-              to Cart</button>
-          </div>
-        </div>
-      </div>
-    </div>
+  
+<div class="row" *ngIf="cart!=''">
+  <div class="col-xl fixed-bottom" style="background-color: whitesmoke;">
+        
+    <h1  style="font-size: 16pt;margin-left: 5%;  font-family: 'Lucida Sans', 'Lucida Sans Regular',
+    'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+    sans-serif; "><strong>Unlock the flavor adventure with every bite; our food cart is now open to satisfy your cravings... =></strong>  <button class="btn btn-light" style="color: rgba(33, 33, 33, 0.835);border: 1pt gray dashed; border-radius: 20px;"><i class="fa fa-shopping-cart"
+              style="font-size:36px" (click)="opencart()"></i></button></h1>
   </div>
+</div>
 
-  <!-- Pizza section -->
-  <div class="row fade-in " id="pizza" style="margin-top: -18px;">
-    <div class="col-lg-12 ">
-      <div class="row">
-        <div class="col-lg-11">
-          <h1 style="font-size: 25pt;
-          font-family: 'Lucida Sans',
-          'Lucida Sans Regular',
-          'Lucida Grande',
-          'Lucida Sans Unicode',
-          Geneva, Verdana,
-          sans-serif;
-          text-align: center;"><strong>Pizza's</strong>
-
-          </h1>
-        </div>
-        <div class="col-lg-1">
-          <button class="btn btn-outline-light" style="color: rgba(33, 33, 33, 0.835);"><i class="fa fa-shopping-cart"
-              style="font-size:36px" (click)="opencart()"></i></button>
-        </div>
-      </div>
-
-
-
-      <div class="row " style="margin-left: 3%;padding-bottom: 2%;">
-        <div class="card " style="width: 300px; margin-left: 1%;margin-top: 2%;border-radius: 25px;"
-          *ngFor="let menu of menulist_pizzas; let idx=index">
-          <img class="card-img-top" src="assets/items/pizza.jpg" alt="Food image" style="border-radius: 18px;">
-          <div class="card-body">
-            <h4 class="card-title" style="text-align: center;font-weight: 800;">
-              {{menu.name}}
-            </h4>
-            <p class="card-text" style="text-align: center;font-weight: bold;font-size: large;">${{menu.price}}</p>
-            <button type="button" (click)="add_pizza_to_cart(idx)" class="btn btn-success" style="margin-left: 30%;">Add
-              to Cart</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Sandwiches section -->
-  <div class="row fade-in" id="sandwich" style="margin-top: 18px;">
-    <div class="col-lg-12 ">
-      <div class="row">
-        <div class="col-lg-11">
-          <h1 style="font-size: 25pt;
-          font-family: 'Lucida Sans',
-          'Lucida Sans Regular',
-          'Lucida Grande',
-          'Lucida Sans Unicode',
-          Geneva, Verdana,
-          sans-serif;
-          text-align: center;"><strong>Sandwiches</strong>
-
-          </h1>
-        </div>
-        <div class="col-lg-1">
-          <button class="btn btn-outline-light" style="color: rgba(33, 33, 33, 0.835);"><i class="fa fa-shopping-cart"
-              style="font-size:36px" (click)="opencart()"></i></button>
-        </div>
-      </div>
-
-
-
-      <div class="row fade-in" style="margin-left: 3%; padding-bottom: 2%;">
-        <div class="card" style="width: 300px; margin-left: 1%;margin-top: 2%;border-radius: 25px;"
-          *ngFor="let menu of menulist_sandwiches; let idx=index">
-          <img class="card-img-top" src="assets/items/sandwich.jpg" alt="Food image" style="border-radius: 18px;">
-          <div class="card-body">
-            <h4 class="card-title" style="text-align: center;font-weight: 800;">
-              {{menu.name}}
-            </h4>
-            <p class="card-text" style="text-align: center;font-weight: bold;font-size: large;">${{menu.price}}
-            </p>
-            <button type="button" (click)="add_sanwich_to_cart(idx)" class="btn btn-success"
-              style="margin-left: 30%;">Add
-              to Cart</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- burger section -->
-  <div class="row fade-in" id="burger" style="margin-top: 18px;">
-    <div class="col-lg-12 ">
-      <div class="row">
-        <div class="col-lg-11">
-          <h1 style="font-size: 25pt;
-        font-family: 'Lucida Sans',
-        'Lucida Sans Regular',
-        'Lucida Grande',
-        'Lucida Sans Unicode',
-        Geneva, Verdana,
-        sans-serif;
-        text-align: center;"><strong>Burger's</strong>
-
-          </h1>
-        </div>
-        <div class="col-lg-1">
-          <button class="btn btn-outline-light" style="color: rgba(33, 33, 33, 0.835);"><i class="fa fa-shopping-cart"
-              style="font-size:36px" (click)="opencart()"></i></button>
-        </div>
-      </div>
-      <div class="row fade-in" style="margin-left: 3%;">
-        <div class="card" style="width: 300px; margin-left: 1%;margin-top: 2%;border-radius: 25px;"
-          *ngFor="let menu of menulist_burger; let idx=index">
-          <img class="card-img-top" src="assets/items/burger.jpg" alt="Food image" style="border-radius: 18px;">
-          <div class="card-body">
-            <h4 class="card-title" style="text-align: center;font-weight: 800;">
-              {{menu.name}}
-            </h4>
-            <p class="card-text" style="text-align: center;font-weight: bold;font-size: large;">${{menu.price}}
-            </p>
-            <button type="button" (click)="add_burger_to_cart(idx)" class="btn btn-success"
-              style="margin-left: 30%;">Add
-              to
-              Cart</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- tornado's section -->
-  <div class="row fade-in" id="tornado" style="margin-top: 20px;">
-    <div class="col-lg-12 ">
-      <div class="row">
-        <div class="col-lg-11">
-          <h1 style="font-size: 25pt;
-        font-family: 'Lucida Sans',
-        'Lucida Sans Regular',
-        'Lucida Grande',
-        'Lucida Sans Unicode',
-        Geneva, Verdana,
-        sans-serif;
-        text-align: center;"><strong>Tornado's</strong>
-
-          </h1>
-        </div>
-        <div class="col-lg-1">
-          <button class="btn btn-outline-light" style="color: rgba(33, 33, 33, 0.835);"><i class="fa fa-shopping-cart"
-              style="font-size:36px" (click)="opencart()"></i></button>
-        </div>
-      </div>
-      <div class="row fade-in" style="margin-left: 3%;">
-        <div class="card" style="width: 300px; margin-left: 1%;margin-top: 2%;border-radius: 25px;"
-          *ngFor="let menu of menulist_tornado; let idx=index">
-          <img class="card-img-top" src="assets/items/tornado.webp" alt="Food image" style="border-radius: 18px;">
-          <div class="card-body">
-            <h4 class="card-title" style="text-align: center;font-weight: 800;">
-              {{menu.name}}
-            </h4>
-            <p class="card-text" style="text-align: center;font-weight: bold;font-size: large;">${{menu.price}}
-            </p>
-            <button type="button" (click)="add_tornado_to_cart(idx)" class="btn btn-success"
-              style="margin-left: 30%;">Add
-              to Cart</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Chinees section -->
-  <div class="row fade-in" id="chinees" style="margin-top: 20px;">
-    <div class="col-lg-12 ">
-      <div class="row">
-        <div class="col-lg-11">
-          <h1 style="font-size: 25pt;
-          font-family: 'Lucida Sans',
-          'Lucida Sans Regular',
-          'Lucida Grande',
-          'Lucida Sans Unicode',
-          Geneva, Verdana,
-          sans-serif;
-          text-align: center;"><strong>Chinees</strong>
-
-          </h1>
-        </div>
-        <div class="col-lg-1">
-          <button class="btn btn-outline-light" style="color: rgba(33, 33, 33, 0.835);"><i class="fa fa-shopping-cart"
-              style="font-size:36px" (click)="opencart()"></i></button>
-        </div>
-      </div>
-      <div class="row fade-in" style="margin-left: 3%;">
-        <div class="card" style="width: 300px; margin-left: 1%;margin-top: 2%;border-radius: 25px;"
-          *ngFor="let menu of menulist_chinees; let idx=index">
-          <img class="card-img-top"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIuzaP8vHVjVUIAnDcX-ZISuJ-cA_kBZNtcQ&usqp=CAU"
-            alt="Food image" style="border-radius: 18px;">
-          <div class="card-body">
-            <h4 class="card-title" style="text-align: center;font-weight: 800;">
-              {{menu.name}}
-            </h4>
-            <p class="card-text" style="text-align: center;font-weight: bold;font-size: large;">${{menu.price}}
-            </p>
-            <button type="button" (click)="add_chinees_to_cart(idx)" class="btn btn-success"
-              style="margin-left: 30%;">Add
-              to Cart</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Momos Section -->
-  <div class="row fade-in" id="momos" style="margin-top: 20px;">
-    <div class="col-lg-12 ">
-      <div class="row">
-        <div class="col-lg-11">
-          <h1 style="font-size: 25pt;
-          font-family: 'Lucida Sans',
-          'Lucida Sans Regular',
-          'Lucida Grande',
-          'Lucida Sans Unicode',
-          Geneva, Verdana,
-          sans-serif;
-          text-align: center;"><strong>Momo's</strong>
-
-          </h1>
-        </div>
-        <div class="col-lg-1">
-          <button class="btn btn-outline-light" style="color: rgba(33, 33, 33, 0.835);"><i class="fa fa-shopping-cart"
-              style="font-size:36px" (click)="opencart()"></i></button>
-        </div>
-      </div>
-      <div class="row fade-in" style="margin-left: 3%;">
-        <div class="card" style="width: 300px; margin-left: 1%;margin-top: 2%;border-radius: 25px;"
-          *ngFor="let menu of menulist_momos; let idx=index">
-          <img class="card-img-top"
-            src="data:image/jpeg;base64,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"
-            alt="Food image" style="border-radius: 18px;">
-          <div class="card-body">
-            <h4 class="card-title" style="text-align: center;font-weight: 800;">
-              {{menu.name}}
-            </h4>
-            <p class="card-text" style="text-align: center;font-weight: bold;font-size: large;">${{menu.price}}
-            </p>
-            <button type="button" (click)="add_momos_to_cart(idx)" class="btn btn-success"
-              style="margin-left: 30%;">Add
-              to Cart</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Mocktail's  section-->
-  <div class="row fade-in" id="moctails" style="margin-top: 20px;padding-bottom: 2%;">
-    <div class="col-lg-12 ">
-      <div class="row">
-        <div class="col-lg-11">
-          <h1 style="font-size: 25pt;
-          font-family: 'Lucida Sans',
-          'Lucida Sans Regular',
-          'Lucida Grande',
-          'Lucida Sans Unicode',
-          Geneva, Verdana,
-          sans-serif;
-          text-align: center;"><strong>Moctail's</strong>
-
-          </h1>
-        </div>
-        <div class="col-lg-1">
-          <button class="btn btn-outline-light" style="color: rgba(33, 33, 33, 0.835);"><i class="fa fa-shopping-cart"
-              style="font-size:36px" (click)="opencart()"></i></button>
-        </div>
-      </div>
-      <div class="row fade-in" style="margin-left: 3%;">
-        <div class="card" style="width: 300px; margin-left: 1%;margin-top: 2%;border-radius: 25px;"
-          *ngFor="let menu of menulist_moctails; let idx=index">
-          <img class="card-img-top"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0wVmalDiyqbgUAhlXz7O1j8rzIGn1s6WAvg&usqp=CAU"
-            alt="Food image" style="border-radius: 18px;">
-          <div class="card-body">
-            <h4 class="card-title" style="text-align: center;font-weight: 800;">
-              {{menu.name}}
-            </h4>
-            <p class="card-text" style="text-align: center;font-weight: bold;font-size: large;">${{menu.price}}
-            </p>
-            <button type="button" (click)="add_momos_to_cart(idx)" class="btn btn-success"
-              style="margin-left: 30%;">Add
-              to Cart</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  
+</body>

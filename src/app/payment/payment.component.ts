@@ -56,7 +56,7 @@ export class PaymentComponent {
   branch="";
   bank="";
   upiId="";
-  upiIdowner: string = '8390596701@paytm';
+  upiIdowner: string = 'jainmanan03052001-1@oksbi';
   qrCodeData:string="";
   qrCodeImage:string="";
   creaditCardopen() {
