@@ -16,11 +16,4 @@ export class NavbarComponent  {
 
   ngOnInit() {
   }
-  handleHoverIn() {
-    document.getElementById('dropdownHover').classList.add('show');
-  }
-
-  handleHoverOut() {
-    document.getElementById('dropdownHover').classList.remove('show');
-  }
 }
